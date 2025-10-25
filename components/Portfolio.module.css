@@ -1,0 +1,202 @@
+/* Portfolio Section */
+.portfolioSection {
+  margin: 80px 0;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  box-sizing: border-box;
+}
+
+/* Section Title */
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #2d4a2d;
+  font-weight: 700;
+  opacity: 0;
+}
+
+/* Filter Buttons Container */
+.filterButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+/* Individual Filter Button */
+.filterButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #e5e7eb;
+  color: #4b5563;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+/* Active Filter Button */
+.filterButtonActive {
+  background: #4a7c4a;
+  color: white;
+}
+
+/* Portfolio Grid Layout */
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  align-items: stretch; /* ensures all items in a row have same height */
+}
+
+/* Portfolio Item Card */
+.portfolioItem {
+  display: flex;
+  flex-direction: column; /* stack image and content vertically */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%; /* stretch card to full grid row height */
+}
+
+/* Category Badge */
+.categoryBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a7c4a;
+  z-index: 2;
+  text-transform: capitalize;
+  box-sizing: border-box;
+}
+
+/* Portfolio Image Container */
+.portfolioImageContainer {
+  width: 100%;
+  height: 250px; /* fixed height for all images */
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0; /* prevent shrinking */
+  box-sizing: border-box;
+}
+
+/* Portfolio Image */
+.portfolioImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Portfolio Content Area */
+.portfolioContent {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  flex-grow: 1; /* ensures all cards match height even with varying content */
+  display: flex; /* make content area stretch */
+  flex-direction: column;
+  justify-content: center; /* vertically center title + description */
+  box-sizing: border-box;
+}
+
+/* Portfolio Title */
+.portfolioTitle {
+  margin: 0 0 10px 0;
+  color: #2d4a2d;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+/* Portfolio Description */
+.portfolioDescription {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+}
+
+/* Media Queries for Tablet */
+@media (max-width: 768px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .portfolioSection {
+    padding: 30px 15px;
+  }
+
+  .portfolioImageContainer {
+    height: 220px; /* slightly smaller on tablet */
+  }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 480px) {
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+
+  .portfolioSection {
+    padding: 20px 10px;
+    margin: 40px 0;
+  }
+
+  .filterButtons {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filterButton {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .portfolioContent {
+    padding: 15px;
+  }
+
+  .portfolioTitle {
+    font-size: 1rem;
+  }
+
+  .portfolioDescription {
+    font-size: 0.8rem;
+  }
+
+  .portfolioImageContainer {
+    height: 200px; /* smaller fixed height for mobile */
+  }
+}

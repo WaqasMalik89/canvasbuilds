@@ -1,26 +1,338 @@
-@import "tailwindcss";
+/* 
+  Global Styling
+  These rules apply to the entire page layout and behavior.
+*/
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  /* Makes page scroll smoothly to anchor links (like #contact) */
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Removes default browser margin around the page */
+  margin: 0;
+
+  /* Sets default font and line spacing */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+
+  /* Sets light gray background and dark text for good contrast */
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+
+/* 
+  HERO SECTION 
+  Large banner area at the top with background image and call-to-action.
+*/
+
+.hero {
+  /* Sets the background image (can be changed dynamically via JS) */
+  background-image: url('/images/UploadedImage4.jpg');
+
+  /* Ensures the image covers the whole area and is centered */
+  background-size: cover;
+  background-position: center;
+
+  /* Text color and padding */
+  color: white;
+  padding: 60px 20px;
+
+  /* Centers text and positions content relative for overlays */
+  text-align: center;
+  position: relative;
+}
+
+
+/* 
+  Call-to-Action Buttons inside Hero 
+*/
+
+.cta-buttons {
+  margin-top: 1em;
+
+  /* Places buttons in a flexible row that wraps if screen is narrow */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.cta-buttons .btn {
+  background-color: white;
+  color: #4CAF50; /* Green */
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+
+  /* Smooth zoom animation on hover */
+  transition: transform 0.3s ease;
+}
+
+.cta-buttons .btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* 
+  Section Styling (for services, portfolio, contact, etc.)
+*/
+
+section {
+  padding: 2em;
+  text-align: center;
+}
+
+
+/* 
+  Services Section Grid 
+  Each service is placed in a responsive grid layout.
+*/
+
+.service-grid {
+  display: grid;
+
+  /* Adjusts column count based on screen size */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  gap: 1em;
+  margin-top: 1em;
+}
+
+
+/* 
+  Portfolio Section - Image Grid 
+*/
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1em;
+  justify-items: center;
+  margin-top: 1em;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  /* Adds smooth transition for zoom and shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Adds depth on hover */
+}
+
+/* Overlay background when image is zoomed */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark translucent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Zoomed image styling */
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  animation: zoomIn 0.3s ease;
+}
+
+/* Fade/zoom animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 
+  Contact Form Styling 
+*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  /* Centers the form and limits its width */
+  max-width: 600px;
+  margin: auto;
+}
+
+input, textarea, button {
+  padding: 0.75em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Submit Button Styles */
+button {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* Button zooms in slightly on hover */
+}
+
+
+/* 
+  Footer Styling 
+*/
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #333;
+  color: white;
+}
+
+
+/* 
+  Social Media Icons in Footer 
+*/
+
+.social-media {
+  margin-top: 1em;
+
+  /* Places icons in a row with space between */
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.social-media img {
+  width: 32px;
+  height: 32px;
+
+  transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+  transform: scale(1.2); /* Zoom on hover */
+}
+
+
+/* 
+  Reveal Animation for Scrolling Elements 
+  (Optional JavaScript can toggle the "visible" class)
+*/
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-nav {
+  font-size: 25px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.top-nav a {
+  padding: 8px 16px;
+  background-color: white;
+  color: #4CAF50; /* Green text */
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Scroll reveal for items */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonials-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  /* background: linear-gradient(135deg, #ffffff, #f0f0f0); */
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.testimonial-card::before {
+  content: '“';
+  font-size: 3.5rem;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: #2575fc; /* accent color */
+  font-family: serif;
+}
+
+.testimonial-card p {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }

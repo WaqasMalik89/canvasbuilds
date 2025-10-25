@@ -1,0 +1,86 @@
+.container {
+    max-width: 1000px;
+    margin: 64px auto;
+    padding: 0 24px;
+    text-align: center;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #111827;
+  }
+  
+  .title {
+    font-size: 2.75rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+    color: #111827;
+  }
+  
+  .description {
+    font-size: 1.25rem;
+    color: #6b7280;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  
+  .cityList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    justify-items: center;
+  }
+  
+  .cityItem {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 14px 0;
+    border-radius: 14px;
+    box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
+    width: 140px;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+  }
+  
+  .cityItem:hover {
+    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.6);
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    .container {
+      padding: 0 16px;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .cityList {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+  
+    .cityItem {
+      width: 100%;
+    }
+  }
+  

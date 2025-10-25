@@ -1,0 +1,23 @@
+
+/**
+ * Styles for portfolio/gallery images within the .images container.
+ * 
+ * This rule ensures that all images:
+ * - Have consistent dimensions (width & height),
+ * - Maintain aspect ratio without distortion (object-fit),
+ * - Have smooth hover effects,
+ * - Are slightly rounded for visual appeal.
+ */
+
+ .images img {
+  width: 100%;               /* Image stretches to fill the container's width */
+  height: 200px;             /* Fixed height to create uniform image rows */
+  object-fit: cover;         /* Crops and scales the image to fill box without distortion */
+  border-radius: 8px;        /* Rounded corners for better aesthetics */
+  
+  /* Smooth transitions on hover effects (scale & shadow) */
+  transition: 
+    transform 0.3s ease,     /* Zoom-in effect */
+    box-shadow 0.3s ease;    /* Soft shadow effect */
+}
+

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Documents/gsap"
+		},
+		{
+			"path": "../../gsap-scroll"
+		},
+		{
+			"path": "../../parallax"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "gsap"
+	}
+}
