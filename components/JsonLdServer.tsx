@@ -1,10 +1,10 @@
 // components/JsonLdServer.tsx
-'use client'; // optional; can omit if only Server Component
+'use client'; // optional if client-only
 
 import React from 'react';
 
 interface JsonLdProps {
-  data: any;
+  data: Array<Record<string, unknown>>; // ✅ array of objects
 }
 
 export default function JsonLdServer({ data }: JsonLdProps) {

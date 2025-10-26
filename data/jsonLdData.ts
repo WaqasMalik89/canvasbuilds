@@ -4,25 +4,24 @@ const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://yourdomain.com#business",
-      "name": "Canvas Builds Services",
-      "image": "https://yourdomain.com/logo.png",
+      "@id": "https://www.canvasbuilds.ca/#business",
+      "name": "Canvas Builds Inc.",
+      "image": "https://www.canvasbuilds.ca/logo.png",
       "description": "Premium landscaping and renovation services across GTA and surrounding areas.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Renovation Street",
-        "addressLocality": "Toronto",
+        "streetAddress": "714 West park ave",
+        "addressLocality": "Bradford",
         "addressRegion": "ON",
-        "postalCode": "M1A 2B3",
+        "postalCode": "L3Z 0T9",
         "addressCountry": "CA"
       },
       "telephone": "+1-647-299-9100",
-      "email": "mail.waqas.malik@gmail.com",
-      "url": "https://yourdomain.com",
+      "email": "info@canvasbuilds.ca",
+      "url": "https://www.canvasbuilds.ca/",
       "sameAs": [
-        "https://www.facebook.com/yourprofile",
-        "https://www.instagram.com/yourprofile",
-        "https://www.linkedin.com/in/yourprofile"
+        "https://www.instagram.com/canvasbuilds.on",
+        "https://www.tiktok.com/@canvas.builds?"
       ],
       "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00",
       "priceRange": "$$",
@@ -37,14 +36,13 @@ const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "@id": "https://yourdomain.com#organization",
-      "name": "Canvas Builds Services",
-      "url": "https://yourdomain.com",
-      "logo": "https://yourdomain.com/logo.png",
+      "@id": "https://www.canvasbuilds.ca/#organization",
+      "name": "Canvas Builds Inc.",
+      "url": "https://www.canvasbuilds.ca/",
+      "logo": "https://www.canvasbuilds.ca/logo.png",
       "sameAs": [
-        "https://www.facebook.com/yourprofile",
-        "https://www.instagram.com/yourprofile",
-        "https://www.linkedin.com/in/yourprofile"
+        "https://www.instagram.com/canvasbuilds.on",
+        "https://www.tiktok.com/@canvas.builds?"
       ]
     },
   
@@ -52,8 +50,8 @@ const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Landscaping and Renovation",
-      "provider": { "@id": "https://yourdomain.com#business" },
+      "serviceType": "Home Renovation, Construction, Landscaping",
+      "provider": { "@id": "https://www.canvasbuilds.ca/#business" },
       "areaServed": {
         "@type": "GeoCircle",
         "geoMidpoint": {

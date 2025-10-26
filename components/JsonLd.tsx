@@ -1,18 +1,21 @@
-// components/JsonLd.tsx
-import Head from 'next/head';
-import Script from 'next/script';
+// components/JsonLdServer.tsx
+'use client'; // if using on client, else remove for server component
+
 import jsonLd from '@/data/jsonLdData';
 
-export default function JsonLdScript() {
+// Use a flexible but typed structure instead of 'any'
+type JsonLdItem = Record<string, unknown>;
+
+export default function JsonLdServer() {
   return (
-    <Head>
-    <Script
-      id="json-ld"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      strategy="beforeInteractive" // ensures it loads early
-    />
-    </Head>
+    <>
+      {jsonLd.map((item: JsonLdItem, index: number) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
+    </>
   );
 }
-

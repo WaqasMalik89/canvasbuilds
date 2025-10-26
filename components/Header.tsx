@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import siteConfig from "@/config/siteConfig";
 import styles from './Header.module.css';
 
 export default function Header() {

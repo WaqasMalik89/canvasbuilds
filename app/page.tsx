@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from 'next/script';  // Import component to load external scripts in an optimized way
 import siteConfig from "../config/siteConfig";
 // These components mostly render static content or server-side rendered content
 import Services from '../components/Services';  // Shows the list of services offered
