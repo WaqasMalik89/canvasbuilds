@@ -105,7 +105,7 @@ const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Review",
-      "itemReviewed": { "@id": "https://yourdomain.com#business" },
+      "itemReviewed": { "@id": "https://www.canvasbuilds.ca/#business" },
       "author": { "@type": "Person", "name": "John Doe" },
       "reviewRating": {
         "@type": "Rating",
