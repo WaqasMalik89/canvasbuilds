@@ -13,6 +13,7 @@ export interface SiteConfig {
     url: string;
     type: string;
     image: string;
+    fbAppId?: string; // ✅ Added this optional property
   };
   twitter: {
     card: string;
@@ -119,6 +120,8 @@ const siteConfig: SiteConfig = {
     url: "https://www.canvasbuilds.ca/",
     type: "website",
     image: "https://www.canvasbuilds.ca/og-image-logo.png",
+    fbAppId: "123456789012345",
+    
   },
 
   twitter: {
@@ -127,7 +130,7 @@ const siteConfig: SiteConfig = {
       "Canvas Builds | Home Renovation, Construction & Landscaping Services in Toronto & GTA",
     description:
       "From home renovations to modern landscaping — Canvas Builds delivers premium construction services across Toronto and the GTA.",
-    image: "https://www.canvasbuilds.ca/twitter-image.png",
+    image: "https://www.canvasbuilds.ca/og-image-logo.png",
   },
 
   address: {
