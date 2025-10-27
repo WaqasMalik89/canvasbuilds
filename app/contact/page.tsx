@@ -5,12 +5,12 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact Us | Top Tier Renovation Services</title>
+        <title>Contact Us | Canvas Builds Inc. Services</title>
         <meta
           name="description"
-          content="Get in touch with Top Tier Renovation Services for premium landscaping and renovation services across GTA and nearby areas."
+          content="Get in touch with Canvas Builds Inc. Services for premium landscaping and renovation services across GTA and nearby areas."
         />
-        <link rel="canonical" href="https://yourdomain.com/contact" />
+        <link href="https://www.canvasbuilds.ca/contact" />
       </Head>
 
       <main style={{ maxWidth: 800, margin: '0 auto', padding: '2rem 1rem' }}>

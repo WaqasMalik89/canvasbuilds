@@ -14,7 +14,6 @@ export default function Home() {
     <>
       <Head>
         <title>{siteConfig.title}</title>
-        <meta name="google-site-verification" content="vKBZI5pFH89dVLkxK8v1D-zLPrlDWFBfojkw_dnx2XM" />
         <meta name="description" content={siteConfig.description} />
         <meta name="robots" content={siteConfig.robots} />
         <link rel="canonical" href={siteConfig.canonical} />

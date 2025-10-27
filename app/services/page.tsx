@@ -5,7 +5,7 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Our Services | Top Tier Renovation</title>
+        <title>Our Services | Canvas Builds Inc.</title>
         <meta
           name="description"
           content="Explore our premium landscaping and outdoor renovation services including design, installation, and maintenance."

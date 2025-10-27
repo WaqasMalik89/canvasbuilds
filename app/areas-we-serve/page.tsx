@@ -11,7 +11,7 @@ export default function AreasWeServePage() {
   return (
     <>
       <Head>
-        <title>Areas We Serve | Top Tier Renovation</title>
+        <title>Areas We Serve | Canvas Builds Inc.</title>
         <meta
           name="description"
           content="We proudly serve Toronto, Brampton, Mississauga, Milton, Guelph, Vaughan, and more GTA areas."
