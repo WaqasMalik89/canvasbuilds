@@ -7,6 +7,10 @@ export default function Header() {
   return (
     <header>
       <nav className={styles.topNav} aria-label="Primary navigation">
+         {/* Home link (first in navigation) */}
+         <Link href="/" className={styles.link}>
+          Home
+        </Link>
         <Link href="/about" className={styles.link}>
           About
         </Link>
