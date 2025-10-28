@@ -1,0 +1,43 @@
+{
+    "redirects": [
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "top-tier-renovation-next-js-seo.vercel.app"
+          }
+        ],
+        "destination": "https://www.canvasbuilds.ca/:path*",
+        "permanent": true
+      },
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "canvasbuilds.ca"
+          }
+        ],
+        "destination": "https://www.canvasbuilds.ca/:path*",
+        "permanent": true
+      }
+    ],
+    "headers": [
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "top-tier-renovation-next-js-seo.vercel.app"
+          }
+        ],
+        "headers": [
+          {
+            "key": "x-robots-tag",
+            "value": "noindex, nofollow, noarchive, nosnippet"
+          }
+        ]
+      }
+    ]
+  }
