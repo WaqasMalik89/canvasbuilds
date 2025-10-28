@@ -3,34 +3,26 @@
       {
         "source": "/:path*",
         "has": [
-          {
-            "type": "host",
-            "value": "top-tier-renovation-next-js-seo.vercel.app"
-          }
+          { "type": "host", "value": "top-tier-renovation-next-js-seo.vercel.app" }
         ],
         "destination": "https://www.canvasbuilds.ca/:path*",
-        "statusCode": 308
+        "permanent": true
       },
       {
         "source": "/:path*",
         "has": [
-          {
-            "type": "host",
-            "value": "canvasbuilds.ca"
-          }
+          { "type": "host", "value": "canvasbuilds.ca" },
+          { "type": "host", "value": "http://canvasbuilds.ca" }
         ],
         "destination": "https://www.canvasbuilds.ca/:path*",
-        "statusCode": 308
+        "permanent": true
       }
     ],
     "headers": [
       {
         "source": "/(.*)",
         "has": [
-          {
-            "type": "host",
-            "value": "top-tier-renovation-next-js-seo.vercel.app"
-          }
+          { "type": "host", "value": "top-tier-renovation-next-js-seo.vercel.app" }
         ],
         "headers": [
           {
@@ -42,16 +34,9 @@
       {
         "source": "/sitemap.xml",
         "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/xml"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=0, must-revalidate"
-          }
+          { "key": "Content-Type", "value": "application/xml" },
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
         ]
       }
     ]
-  }
-  
+  }  
