@@ -56,10 +56,25 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // Create a WebPage structured data object for search preview image
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteConfig.url}/#webpage`,
+    url: siteConfig.url,
+    name: siteConfig.title,
+    description: siteConfig.description,
+    image: siteConfig.og.image, // Hero / OG image
+  };
+
+  // Merge with existing JSON-LD
+  const mergedJsonLd = [...jsonLd, webPageJsonLd];
+
   return (
     <html lang="en">
       <body>
-        <JsonLdServer data={jsonLd} />
+        {/* Inject merged JSON-LD for Google */}
+        <JsonLdServer data={mergedJsonLd} />
         <Header />
         {children}
         <Footer />

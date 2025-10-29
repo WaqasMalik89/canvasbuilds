@@ -31,6 +31,16 @@ const jsonLd = [
         "reviewCount": 124
       }
     },
+
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://www.canvasbuilds.ca/#webpage",
+      "url": "https://www.canvasbuilds.ca/",
+      "name": "Canvas Builds Inc.",
+      "description": "Premium landscaping and renovation services across GTA and surrounding areas.",
+      "image": "https://www.canvasbuilds.ca/logo.png"
+    },
   
     // 2️⃣ Organization (to emphasize brand)
     {
