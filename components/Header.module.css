@@ -1,84 +1,63 @@
 .topNav {
-  font-size: 25px;
   display: flex;
-  gap: 50px;
   justify-content: center;
-  margin: 20px 0;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  background: #fff;
+  padding: 1rem 0;
+  font-weight: 600;
+  position: relative;
 }
 
-/* Style links */
 .link {
-  position: relative;
-  padding: 8px 16px;
-  background-color: white;
+  text-decoration: none;
   color: #4CAF50;
   font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* Floating glow effect */
-.link::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  background: radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.2), transparent 70%);
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 0;
-}
-
-.link:hover::after {
-  opacity: 1;
-  transform: scale(1.2);
+  transition: color 0.3s ease;
 }
 
 .link:hover {
-  color: #fff;
-  background-color: #4CAF50;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+  color: #2e7d32;
 }
 
-.link > * {
+/* Dropdown Menu */
+.dropdown {
   position: relative;
-  z-index: 1; /* Keeps text above the glow */
+  display: inline-block;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .topNav {
-    gap: 20px;
-    font-size: 18px;
-  }
-
-  .link {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
+.dropdown button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4CAF50;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-@media (max-width: 480px) {
-  .topNav {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    font-size: 16px;
-  }
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  z-index: 100;
+  padding: 0.5rem 0;
+}
 
-  .link {
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
+.dropdownItem {
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdownItem:hover {
+  background: #f4f4f4;
+  color: #4CAF50;
 }
