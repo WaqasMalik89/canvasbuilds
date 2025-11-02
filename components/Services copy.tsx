@@ -4,13 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Services() {
   const services = [
-    { name: 'Home Renovation', href: '/services/toronto/renovation-contractors' },
-    { name: 'Finished Legal Basement', href: '/services/toronto/renovation-contractors' },
-    { name: 'Custom Landscape Design & Planning', href: '/services/toronto/renovation-contractors' },
-    { name: 'Interlocking Pavers & Hardscaping', href: '/services/toronto/renovation-contractors' },
-    { name: 'Lighting & Illumination Solutions', href: '/services/toronto/renovation-contractors' },
-    { name: 'Garden Installation, Sod & Turf', href: '/services/toronto/renovation-contractors' },
-    { name: 'Toronto Renovation Contractors', href: '/services/toronto/renovation-contractors' }, // added
+    'Home Renovation',
+    'Finished Legal Basement',
+    'Custom Landscape Design & Planning',
+    'Interlocking Pavers & Hardscaping',
+    'Lighting & Illumination Solutions',
+    'Garden Installation, Sod & Turf',
   ];
 
   const scrollItems = [...services, ...services];
@@ -18,6 +17,7 @@ export default function Services() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Small delay to ensure DOM is ready before starting animation
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
@@ -76,14 +76,10 @@ export default function Services() {
           }}
         >
           {scrollItems.map((service, index) => (
-            <a 
-              key={index} 
-              href={service.href} 
-              className="marquee-item"
-            >
+            <span key={index} className="marquee-item">
               <span className="service-icon">🌿</span>
-              {service.name}
-            </a>
+              {service}
+            </span>
           ))}
         </div>
       </div>
@@ -116,8 +112,7 @@ export default function Services() {
           background: #ffffff;
           box-shadow: 0 4px 12px rgba(0,0,0,0.1);
           transition: all 0.3s ease, transform 0.3s ease;
-          cursor: pointer;
-          text-decoration: none;
+          cursor: default;
           opacity: ${isVisible ? 1 : 0};
           transform: ${isVisible ? 'translateY(0)' : 'translateY(20px)'};
           transition: opacity 0.5s ease, transform 0.5s ease;
