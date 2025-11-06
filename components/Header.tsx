@@ -29,8 +29,8 @@ export default function Header() {
 
             {isDropdownOpen && (
               <div className={styles.dropdownMenu}>
-                <Link href="/services" className={styles.dropdownItem}>All Services</Link>
-                <Link href="/services/toronto/renovation-contractors" className={styles.dropdownItem}>Toronto</Link>
+                <Link href="/services" className={styles.dropdownItem}>Overview</Link>
+                <Link href="/services/toronto/renovation-contractors" className={styles.dropdownItem}>Toronto Renovation Details</Link>
                 </div>
             )}
           </div>

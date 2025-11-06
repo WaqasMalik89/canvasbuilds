@@ -52,7 +52,7 @@
 }
 
 .heroText h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.1;
@@ -62,14 +62,13 @@
 .highlight {
   color: #ff6b35;
   background: linear-gradient(45deg, #ff6b35, #f7931e);
-  font-size: 3rem;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .heroText p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin-bottom: 2.5rem;
   opacity: 0.9;
   line-height: 1.6;
@@ -621,52 +620,6 @@
   opacity: 0.9;
 }
 
-.whyChoose {
-  padding: 6rem 2rem;
-  background: #f8fafc;
-}
-
-.featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.featureItem {
-  text-align: center;
-  background: white;
-  border-radius: 15px;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.featureItem:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.featureIcon {
-  font-size: 2.5rem;
-  color: #ff6b35;
-  margin-bottom: 1.5rem;
-}
-
-.featureItem h4 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.75rem;
-}
-
-.featureItem p {
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .heroContent {
@@ -692,8 +645,7 @@
   
   .quickStats {
     position: relative;
-    bottom: 10px;
-    transform: translateX(-40%) translateY(-99%);
+    bottom: 0;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1.5rem;
@@ -808,17 +760,6 @@
   line-height: 1.5;
 }
 
-.whyChoose {
-  padding: 4rem 1.5rem;
-}
-
-.featuresGrid {
-  gap: 1.5rem;
-}
-
-.featureItem {
-  padding: 2rem 1.5rem;
-}
 }
 
 @media (max-width: 480px) {

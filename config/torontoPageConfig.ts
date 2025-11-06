@@ -21,5 +21,7 @@ export const torontoPageConfig = {
     city: "Toronto",
     province: "ON",
     phone: "+1 (647) 299-9100",
+    streetAddress: "714 West park ave", // replace with your Toronto office or service address
+    postalCode: "M9L 2B3", // replace with correct postal code
   };
   
