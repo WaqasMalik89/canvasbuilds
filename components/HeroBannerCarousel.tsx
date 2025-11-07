@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 const backgroundImages = [
   '/images/uploaded-image-3.jpg',
-  '/images/uploaded-image-7.jpg',
-  '/images/uploaded-image-2.jpg',
-  '/images/uploaded-image-4.jpg',
+  '/images/uploaded-image-11.jpg',
+  '/images/painting/painting-project-1.jpg',
+  '/images/basement/basement-project-2.jpg',
 ];
 
 export default function HeroCarousel() {

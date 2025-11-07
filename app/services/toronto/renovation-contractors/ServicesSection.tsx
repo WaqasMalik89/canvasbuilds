@@ -26,9 +26,9 @@ const services: Service[] = [
       'Lighting and backsplash upgrades',
     ],
     images: [
-      '/images/kitchen/Kitchen-project-1.jpg',
-      '/images/kitchen/Kitchen-project-2.jpg',
-      '/images/kitchen/Kitchen-project-3.jpg',
+      '/images/kitchen/kitchen-project-1.jpg',
+      '/images/kitchen/kitchen-project-2.jpg',
+      '/images/kitchen/kitchen-project-3.jpg',
     ],
     icon: '🍳',
   },
