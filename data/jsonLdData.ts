@@ -60,7 +60,7 @@ const jsonLd = [
     "name": "Canvas Builds Inc. | Home Renovation & Contracting Services in GTA",
     "description": "Professional home renovation and contracting company specializing in kitchen, bathroom, and basement renovations across the Greater Toronto Area and surrounding communities.",
     "image": "https://www.canvasbuilds.ca/logo.png",
-    "isPartOf": { "@id": "https://www.canvasbuilds.ca/#organization" }
+    "isPartOf": { "@id": "https://www.canvasbuilds.ca/#website" }
   },
 
   // 3️⃣ Organization — Brand entity connection
