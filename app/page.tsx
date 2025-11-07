@@ -35,6 +35,7 @@ export default function Home() {
           content={siteConfig.twitter.description}
         />
         <meta name="twitter:image" content={siteConfig.twitter.image} />
+        
       </Head>
         {/* Render interactive hero banner carousel */}
         <HeroCarousel />

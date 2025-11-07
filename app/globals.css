@@ -336,3 +336,20 @@ footer {
   transform: translateY(-10px);
   box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
+/* Ensure header is always above everything else */
+header, .header {
+  position: relative;
+  z-index: 1000; /* ok */
+}
+
+/* Prevent background from scrolling when menu is open (backup) */
+body.menuOpen {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Make sure fixed header doesn't overlap content */
+main, section, .hero {
+  margin-top: 70px; /* same as header height */
+  z-index: 0; /* ensure dropdown > hero */
+}

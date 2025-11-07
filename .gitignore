@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore TypeScript/CSS working files (backup)
+components/*working*.tsx
+components/*working*.ts
+components/*working*.css
+

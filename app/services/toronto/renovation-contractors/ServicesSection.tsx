@@ -28,6 +28,7 @@ const services: Service[] = [
     images: [
       '/images/kitchen/Kitchen-project-1.jpg',
       '/images/kitchen/Kitchen-project-2.jpg',
+      '/images/kitchen/Kitchen-project-3.jpg',
     ],
     icon: '🍳',
   },
@@ -45,6 +46,7 @@ const services: Service[] = [
     images: [
       '/images/bathroom/bathroom-project-1.jpg',
       '/images/bathroom/bathroom-project-2.jpg',
+      '/images/bathroom/bathroom-project-3.jpg',
     ],
     icon: '🛁',
   },
@@ -127,7 +129,7 @@ export default function ServicesSection() {
                 <div className={styles.carouselContainer}>
                   <Image
                     src={service.images[current]}
-                    alt={`${service.title} project in Toronto — image ${current + 1}`}
+                    alt={`${service.title} Canvas Builds project in Toronto — image ${current + 1}`}
                     width={600}
                     height={400}
                     className={styles.carouselImage}
