@@ -4,22 +4,40 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export default function Testimonials() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from('.testimonial-card', {
-      opacity: 0,
-      y: 50,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 80%',
-      },
+    // ✅ Explicitly cast to HTMLElement[]
+    const cards = gsap.utils.toArray('.testimonial-card') as HTMLElement[];
+
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 60,
+          scale: 0.95,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
     });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   const testimonials = [

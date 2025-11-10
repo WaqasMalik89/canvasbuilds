@@ -36,11 +36,11 @@ export default function HeroCarousel() {
       <h1>Transform Your Space. Live Your Dream Home</h1>
       <p>Premium Home Renovation and Landscaping Services for GTA & Surrounding Areas</p>
       <div className="cta-buttons" style={{ marginTop: 20 }}>
-        <a href="#contact" className="btn">
-          Get a Quote
+        <a href="/services/toronto/renovation-contractors#services" className="btn">
+          Toronto Home Solutions
         </a>
-        <a href="/services/toronto/renovation-contractors" className="btn" style={{ marginLeft: 10 }}>
-        Toronto Gallery
+        <a href="/services/toronto/renovation-contractors#before-after" className="btn" style={{ marginLeft: 10 }}>
+        See Before & After Difference
         </a>
       </div>
     </header>

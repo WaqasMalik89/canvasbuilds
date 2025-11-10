@@ -1,6 +1,6 @@
 'use client';
 
-import { FaTools, FaHandshake, FaRulerCombined, FaShieldAlt } from 'react-icons/fa';
+import { FaTools, FaHandshake, FaRulerCombined } from 'react-icons/fa';
 import styles from './TorontoRenovationContractors.module.css';
 
 export default function WhyChooseUsSection() {

@@ -5,6 +5,7 @@ import ProcessSection from "./ProcessSection";
 import WhyChooseUsSection from "./WhyChooseUsSection"
 import ContactForm from "./ContactForm";
 import { torontoPageConfig } from "./torontoPageConfig";
+import BeforeAfterGallery from "./BeforeAfterGallery";
 
 export const metadata = {
   title: torontoPageConfig.title,
@@ -33,6 +34,7 @@ export default function TorontoPage() {
       <HeroSection />
       <StatsSection />
       <ServicesSection />
+      <BeforeAfterGallery/>
       <ProcessSection/>
       <WhyChooseUsSection/>
       <ContactForm />

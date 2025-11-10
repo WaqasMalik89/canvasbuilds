@@ -1,0 +1,114 @@
+.beforeAfterSection {
+    padding: 6rem 2rem;
+    background: #f8fafc;
+  }
+  
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionHeader p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .figure {
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .figure:hover {
+    transform: translateY(-5px);
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* makes height responsive */
+    overflow: hidden;
+  }
+  
+  .image {
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+  }
+  
+  .toggleButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    background: #f1f1f1;
+  }
+  
+  .toggleBtn {
+    padding: 0.5rem 1.25rem;
+    border: 2px solid #ff6b35;
+    border-radius: 25px;
+    background: white;
+    color: #ff6b35;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .toggleBtn:hover {
+    background: #ff6b35;
+    color: white;
+  }
+  
+  .toggleBtn.active {
+    background: #ff6b35;
+    color: white;
+  }
+  
+  .caption {
+    text-align: center;
+    padding: 1rem 1.5rem 1.5rem;
+    color: #555;
+  }
+  
+  .caption strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .caption p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .imageWrapper {
+      aspect-ratio: 1; /* square on small screens */
+    }
+    .sectionHeader h2 {
+      font-size: 2rem;
+    }
+  }
+  

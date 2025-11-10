@@ -175,19 +175,22 @@ export default function ServicesSection() {
               {/* Carousel */}
               <div className={styles.serviceCarousel}>
                 <div className={styles.carouselContainer}>
-                <figure className={styles.figure}>
-  <div className={styles.imageWrapper}>
-    <Image
-      src={activeImage.src}
-      alt={activeImage.alt}
-      title={activeImage.title}
-      fill
-      style={{ objectFit: 'contain' }}
-    />
-  </div>
-  <figcaption className={styles.caption}>{activeImage.alt}</figcaption>
-</figure>
+                  <figure className={styles.figure}>
+                    <div className={styles.imageWrapper}>
+                      <Image
+                        src={activeImage.src}
+                        alt={activeImage.alt}
+                        title={activeImage.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        style={{ objectFit: 'contain' }}
+                        priority={true}
+                      />
+                    </div>
+                    <figcaption className={styles.caption}>{activeImage.alt}</figcaption>
+                  </figure>
 
+                  {/* Carousel Arrows */}
                   <button
                     className={`${styles.carouselArrow} ${styles.arrowLeft}`}
                     onClick={() => navigateImage(service.id, 'prev')}
@@ -221,9 +224,9 @@ export default function ServicesSection() {
                         src={img.src}
                         alt={img.alt}
                         title={img.title}
-                        width={60}
-                        height={60}
-                        style={{ objectFit: 'cover' }}
+                        width={80}
+                        height={80}
+                        style={{ objectFit: 'cover', borderRadius: '4px' }}
                       />
                     </div>
                   ))}

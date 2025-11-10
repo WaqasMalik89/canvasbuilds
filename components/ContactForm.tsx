@@ -56,11 +56,6 @@ export default function ContactForm() {
         </button>
       </form>
       {status && <p>{status}</p>}
-      <p>Email: info@canvasbuilds.ca | (519) 996-8678 | (647) 299-9100 </p>
-      <p>
-        Serving Toronto, Brampton, Mississauga, Milton, Guelph, Vaughan, Bradford,
-        Barrie, Newmarket and the GTA
-      </p>
     </section>
   );
 }

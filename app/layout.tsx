@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const mergedJsonLd = [...jsonLd, webPageJsonLd];
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         {/* Inject merged JSON-LD for Google */}
         <JsonLdServer data={mergedJsonLd} />
