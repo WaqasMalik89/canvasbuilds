@@ -13,7 +13,7 @@ export interface SiteConfig {
     url: string;
     type: string;
     image: string;
-    fbAppId?: string; // ✅ Added this optional property
+    fbAppId?: string;
   };
   twitter: {
     card: string;
@@ -30,6 +30,10 @@ export interface SiteConfig {
   social: {
     instagram: string;
     facebook: string;
+    homestar: string;
+  };
+  reviews: {
+    homestar: string;
   };
 }
 
@@ -44,6 +48,8 @@ const siteConfig: SiteConfig = {
     "Canvas Builds construction",
     "Canvas Builds renovation services",
     "Canvas Builds landscaping",
+    "Canvas Builds Homestar",
+    "Canvas Builds reviews",
     "construction company GTA",
     "home improvement contractors GTA",
     "licensed renovation company Toronto",
@@ -94,6 +100,13 @@ const siteConfig: SiteConfig = {
     "pathway lighting design Toronto",
     "security and accent lighting GTA",
 
+    // Reviews & Ratings
+    "Canvas Builds Homestar reviews",
+    "home renovation company reviews Toronto",
+    "rated construction company GTA",
+    "trusted landscapers Toronto reviews",
+    "home service ratings GTA",
+
     // Combined & Local Intent
     "home renovation and landscaping Toronto",
     "renovation and landscaping company GTA",
@@ -106,6 +119,7 @@ const siteConfig: SiteConfig = {
     "landscaping services near me",
     "best renovation company GTA",
     "top rated landscapers Toronto",
+    "Homestar rated contractors Toronto",
   ],
   author: "Waqas Malik",
   url: "https://www.canvasbuilds.ca/",
@@ -121,7 +135,6 @@ const siteConfig: SiteConfig = {
     type: "website",
     image: "https://www.canvasbuilds.ca/og-image-logo.png",
     fbAppId: "123456789012345",
-    
   },
 
   twitter: {
@@ -142,7 +155,12 @@ const siteConfig: SiteConfig = {
 
   social: {
     instagram: "https://www.instagram.com/canvasbuilds.on",
-    facebook: "https://www.instagram.com/canvasbuilds.on",
+    facebook: "https://www.facebook.com/people/Canvas-Builds/61583402517730/", // ✅ Updated Facebook URL
+    homestar: "https://www.homestars.com/profile/canvas-builds-inc",
+  },
+
+  reviews: {
+    homestar: "https://www.homestars.com/profile/canvas-builds-inc",
   },
 };
 

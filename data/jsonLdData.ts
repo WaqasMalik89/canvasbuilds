@@ -40,7 +40,9 @@ const jsonLd = [
     ],
     "sameAs": [
       "https://www.instagram.com/canvasbuilds.on",
-      "https://www.tiktok.com/@canvas.builds"
+      "https://www.tiktok.com/@canvas.builds",
+      "https://www.homestars.com/profile/canvas-builds-inc",
+      "https://www.facebook.com/people/Canvas-Builds/61583402517730/"
     ],
     "hasMap": "https://www.google.com/maps/place/714+West+Park+Ave,+Bradford,+ON+L3Z+3B9",
     "priceRange": "$$",
