@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import HeroSection from "./HeroSection";
 import StatsSection from "./StatsSection";
 import ServicesSection from "./ServicesSection";
@@ -37,6 +38,11 @@ export default function TorontoPage() {
       <BeforeAfterGallery/>
       <ProcessSection/>
       <WhyChooseUsSection/>
+      <div style={{ padding: '40px 20px', textAlign: 'center' }}>
+        <p>
+          Ready to discuss your vision for a **modern kitchen renovation in Toronto** or explore the ROI of a **legal basement apartment**? <Link href="/contact" style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>Contact our Toronto renovation contractors</Link> today for a transparent, no-obligation quote.
+        </p>
+      </div>
       <ContactForm />
     </main>
   );

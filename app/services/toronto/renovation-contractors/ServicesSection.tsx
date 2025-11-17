@@ -82,14 +82,14 @@ const services: Service[] = [
   },
   {
     id: 'basement',
-    title: 'Basement Finishing',
+    title: 'Legal Basement Suites & Finishing',
     description:
-      'Maximize your living space with a fully finished basement. From legal rental suites to family entertainment rooms, Canvas Builds transforms underused areas into beautiful, functional spaces that add real value.',
+      'Unlock the full potential and value of your property with a fully finished, legal basement. We are Toronto experts in converting underused spaces into **registered legal secondary suites (SDUs)**, family entertainment rooms, or home gyms that comply with all Ontario Fire and Building Codes, maximizing your rental income potential.',
     features: [
-      'Legal secondary suites',
+      'Legal secondary suites (Income Potential)', // Highlighted
+      'Fire Code & Egress Window Compliance',      // Authority signal
+      'Waterproofing & structural foundation work', 
       'Home theatre & bar areas',
-      'Waterproofing & insulation',
-      'Custom flooring & lighting',
     ],
     images: [
       {
@@ -156,6 +156,139 @@ export default function ServicesSection() {
         <h2>Specialized Home Renovation Services in Toronto</h2>
         <p>High-quality renovation services tailored to your needs in Toronto.</p>
       </div>
+
+      <div className={styles.serviceDeepDive}>
+  <h3>Toronto Renovations That Add Real Value to Your Home</h3>
+
+  {/* Deep Dive 1: Legal Basement Suites */}
+  <p>
+    Converting a basement into a <strong>legal rental suite</strong> is one of the most
+    reliable ways Toronto homeowners boost monthly income and long-term property value.
+    Because every home is different — especially older Toronto builds — we handle the full
+    process: drawings, permits, inspections, and construction. We stay aligned with the
+    <a 
+      href="https://www.ontario.ca/page/2024-ontario-building-code"
+      target="_blank" rel="noopener noreferrer"
+    >Ontario Building Code</a>,
+    <a
+      href="https://www.toronto.ca/community-people/public-safety-alerts/safety-tips-prevention/home-high-rise-school-workplace-safety/low-rise-small-multi-unit-residential-fire-safety/two-dwelling-unit-houses-basement-apartments/"
+      target="_blank" rel="noopener noreferrer"
+    >Toronto Fire Code</a>, and the
+    <a 
+      href="https://www.toronto.ca/services-payments/building-construction/building-permit/"
+      target="_blank" rel="noopener noreferrer"
+    >City’s building permit requirements</a>.
+    Underpinning for ceiling height, installing <strong>egress windows</strong>, adding
+    fire-rated separations, and meeting ventilation/insulation standards are part of our
+    everyday workflow.
+    For homeowners who want a deeper look at the City’s process, Toronto’s official guide
+    on
+    <a
+      href="https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/small-residential-project-guides/residential-underpinning-including-basement-entrances-copy/"
+      target="_blank" rel="noopener noreferrer"
+    >basement entrances & underpinning</a>
+    is a great resource.
+  </p>
+
+  {/* Deep Dive 2: Kitchen & Structural Remodels */}
+  <p>
+    Kitchens across Toronto range from tight 1950s layouts to ultra-compact condo designs.
+    We specialize in turning these spaces into functional, modern, open-concept rooms.
+    If your home needs a <strong>load-bearing wall removed</strong> to open the main floor,
+    we work with licensed structural engineers and follow the
+    <a
+      href="https://www.ontario.ca/document/ontario-building-code"
+      target="_blank" rel="noopener noreferrer"
+    >OBC structural guidelines</a>
+    to install LVL or steel beams safely. From custom cabinetry to quartz counters to
+    improved lighting layouts, our designs focus on creating kitchens that feel intuitive
+    and comfortable — not just beautiful in photos.
+  </p>
+
+  {/* Deep Dive 3: Full Home Renovations & Additions */}
+  <p>
+    For homeowners taking on major upgrades, our <strong>full home renovation</strong> and
+    <strong>addition</strong> services cover everything from the first sketch to the final
+    coat of paint. Whether you’re adding a rear extension, a second floor, or completely
+    reworking your existing layout, we handle architectural drawings, permit applications,
+    structural work, and finish selections.  
+    All additions follow Toronto’s regulations through the
+    <a
+      href="https://www.toronto.ca/services-payments/building-construction/zoning/"
+      target="_blank" rel="noopener noreferrer"
+    >Zoning By-law</a>
+    and (where necessary) the
+    <a
+      href="https://www.toronto.ca/city-government/planning-development/committee-of-adjustment/"
+      target="_blank" rel="noopener noreferrer"
+    >Committee of Adjustment</a>,
+    ensuring your project is compliant before construction begins.
+  </p>
+</div>
+
+<div className="referenceSection">
+  <h3>Helpful Reference Links</h3>
+  <ul className="referenceList">
+
+    <li><a href="https://buildingcode.online" target="_blank">
+      Ontario Building Code – Full Online Access
+    </a></li>
+
+    <li><a href="https://www.homestars.com" target="_blank">
+      HomeStars – Contractor Ratings & Verified Reviews
+    </a></li>
+
+    <li><a href="https://www.toronto.ca/services-payments/building-construction/" target="_blank">
+      City of Toronto – Building Permits & Inspections
+    </a></li>
+
+    <li><a href="https://www.cmhc-schl.gc.ca/en/consumers" target="_blank">
+      CMHC – Homeowner Construction & Renovation Guides
+    </a></li>
+
+    <li><a href="https://www.esasafe.com" target="_blank">
+      ESA Ontario – Electrical Safety Authority Guidelines
+    </a></li>
+
+    <li><a href="https://www.nrcan.gc.ca/energy-efficiency" target="_blank">
+      NRCAN – Energy Efficiency Standards for Homes
+    </a></li>
+
+    <li><a href="https://up.codes" target="_blank">
+      UpCodes – Building Standards (Framing & Structural)
+    </a></li>
+
+    <li><a href="https://www.familyhandyman.com" target="_blank">
+      Family Handyman – DIY Framing & Wall Structure Guides
+    </a></li>
+
+    <li><a href="https://www.finehomebuilding.com" target="_blank">
+      Fine Homebuilding – Professional Construction Tutorials
+    </a></li>
+
+    <li><a href="https://www.khanacademy.org/science/engineering" target="_blank">
+      Khan Academy – Basic Load-Bearing & Structural Concepts
+    </a></li>
+
+    <li><a href="https://www.lowes.ca/ideas-how-tos" target="_blank">
+      Lowe’s Canada – Home Improvement Tutorials
+    </a></li>
+
+    <li><a href="https://www.homedepot.ca/en/home/ideas-how-to.html" target="_blank">
+      Home Depot Canada – Framing, Wall Prep & Installation Guides
+    </a></li>
+
+    <li><a href="https://www.building-anatomy.com" target="_blank">
+      Building Anatomy – Wall Structure & Stud Layout Explanations
+    </a></li>
+
+    <li><a href="https://www.strongtie.com" target="_blank">
+      Simpson Strong-Tie – Structural Hardware & Load Info
+    </a></li>
+
+  </ul>
+</div>
+
 
       <div className={styles.servicesGrid}>
         {services.map((service) => {
