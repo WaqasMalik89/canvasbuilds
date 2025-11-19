@@ -2,7 +2,7 @@ export const torontoPageConfig = {
     title: "Toronto Renovation Contractors | Kitchen, Bathroom, Basement Experts",
     description:
       "Trusted Toronto renovation contractors specializing in kitchen, bathroom, basement, and painting services. Licensed & insured with 15+ years of experience. Get a free estimate today!",
-    canonical: "https://www.canvasbuilds.ca/services/toronto/renovation-contractors",
+    canonical: "https://www.canvasbuilds.ca/services/toronto-renovation-contractors",
     image: "https://www.canvasbuilds.ca/og-image-logo.png",
     keywords: [
       "Toronto renovation contractors GTA",
