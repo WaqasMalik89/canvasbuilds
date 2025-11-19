@@ -194,7 +194,7 @@ export default function Header() {
                   <span className={styles.menuIcon}>📊</span>
                   Overview
                 </Link>
-                <Link href="/services/toronto/renovation-contractors" className={styles.dropdownItem} onClick={handleDropdownItemClick} role="menuitem">
+                <Link href="/services/toronto-renovation-contractors" className={styles.dropdownItem} onClick={handleDropdownItemClick} role="menuitem">
                   <span className={styles.menuIcon}>🏙️</span>
                   Toronto Renovation
                 </Link>
