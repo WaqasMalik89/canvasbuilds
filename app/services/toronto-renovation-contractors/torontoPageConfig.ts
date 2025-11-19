@@ -2,7 +2,7 @@ export const torontoPageConfig = {
     title: "Toronto Home Renovation Contractors | Experts for Kitchens, Bathrooms, and Basements",
     description:
       "Trusted Toronto renovation contractors specializing in legal basement suites, kitchen, and bathroom remodels. We handle permits and compliance for stress-free home transformations. Get your free estimate from Canvas Builds today.",
-    canonical: "https://www.canvasbuilds.ca/services/toronto/renovation-contractors",
+    canonical: "https://www.canvasbuilds.ca/services/toronto-renovation-contractors",
     keywords: [
       "Toronto home renovation contractor",
       "legal basement suite Toronto", // High-value local keyword
