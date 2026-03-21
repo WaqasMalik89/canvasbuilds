@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -7,11 +8,11 @@ export default function Footer() {
         borderTop: '1px solid #1f2937',
         padding: '40px 16px',
         textAlign: 'center',
-        backgroundColor: '#111827', // dark gray/black background
-        color: '#e5e7eb', // light text
+        backgroundColor: '#111827',
+        color: '#e5e7eb',
       }}
     >
-      {/* Business Info with SEO-friendly <address> */}
+      {/* Business Info */}
       <div style={{ marginBottom: 20 }}>
         <h3
           style={{
@@ -24,7 +25,6 @@ export default function Footer() {
           Canvas Builds Inc.
         </h3>
 
-        {/* Proper address tag for Google crawlers */}
         <address
           style={{
             fontStyle: 'normal',
@@ -38,7 +38,7 @@ export default function Footer() {
         </address>
 
         <p style={{ margin: '8px 0 0 0', color: '#d1d5db' }}>
-          Serving the Greater Toronto Area (GTA) & surrounding regions
+          Serving the Greater Toronto Area (GTA) &amp; surrounding regions
         </p>
 
         <p style={{ marginTop: 10 }}>
@@ -53,7 +53,7 @@ export default function Footer() {
           >
             +1 (519) 996-8678
           </a>
-          |
+          {' | '}
           <a
             href="tel:+16472999100"
             style={{
@@ -106,39 +106,36 @@ export default function Footer() {
           marginTop: 10,
         }}
       >
-        <a
-          href="https://www.instagram.com/canvasbuilds.on"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
+        <a href="https://www.instagram.com/canvasbuilds.on" target="_blank" rel="noopener noreferrer">
           <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} />
         </a>
-        <a
-          href="https://www.facebook.com/people/Canvas-Builds/61583402517730/#"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-        >
+
+        <a href="https://www.facebook.com/people/Canvas-Builds/61583402517730/#" target="_blank" rel="noopener noreferrer">
           <Image src="/icons/facebook.png" alt="Facebook" width={24} height={24} />
         </a>
-        <a
-          href="https://www.youtube.com/yourchannel"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="YouTube"
-        >
+
+        <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer">
           <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} />
         </a>
-        <a
-          href="https://www.tiktok.com/@canvas.builds"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok"
-        >
+
+        <a href="https://www.tiktok.com/@canvas.builds" target="_blank" rel="noopener noreferrer">
           <Image src="/icons/tiktok.png" alt="TikTok" width={24} height={24} />
         </a>
       </div>
+
+      {/* Legal Links */}
+      <p style={{ marginBottom: 8 }}>
+        <Link
+          href="/privacy-policy"
+          style={{
+            color: '#9ca3af',
+            textDecoration: 'underline',
+            fontSize: '0.9rem',
+          }}
+        >
+          Privacy Policy
+        </Link>
+      </p>
 
       {/* Copyright */}
       <p
