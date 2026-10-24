@@ -1,355 +1,110 @@
-/* 
-  Global Styling
-  These rules apply to the entire page layout and behavior.
-*/
+@import 'tailwindcss';
 
-html {
-  /* Makes page scroll smoothly to anchor links (like #contact) */
-  scroll-behavior: smooth;
+/* ==========================================================================
+   Design tokens — change brand colours and fonts here.
+   Tailwind turns each token into utilities, e.g. --color-gold-500 → bg-gold-500.
+   ========================================================================== */
+@theme {
+  /* Brand gold (from the Canvas Builds "CB" logo) */
+  --color-gold-50: #fbf7ee;
+  --color-gold-100: #f5ecd6;
+  --color-gold-200: #ead7aa;
+  --color-gold-300: #ddbd78;
+  --color-gold-400: #d2a85a;
+  --color-gold-500: #c39443;
+  --color-gold-600: #a77935;
+  --color-gold-700: #865e2c;
+  --color-gold-800: #6d4c29;
+  --color-gold-900: #5b3f25;
+
+  /* Warm neutrals */
+  --color-ink-50: #f8f7f4;
+  --color-ink-100: #efede8;
+  --color-ink-200: #e0ddd5;
+  --color-ink-300: #c8c3b8;
+  --color-ink-400: #a19b8e;
+  --color-ink-500: #6f695e; /* WCAG AA on white, ink-50 and ink-100 */
+  --color-ink-600: #5f5a50;
+  --color-ink-700: #45413a;
+  --color-ink-800: #2a2824;
+  --color-ink-900: #171614;
+  --color-ink-950: #0d0c0b;
+
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgb(13 12 11 / 0.04), 0 8px 24px rgb(13 12 11 / 0.06);
+  --shadow-card-hover: 0 2px 4px rgb(13 12 11 / 0.05), 0 18px 40px rgb(13 12 11 / 0.12);
 }
 
-body {
-  /* Removes default browser margin around the page */
-  margin: 0;
-
-  /* Sets default font and line spacing */
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-
-  /* Sets light gray background and dark text for good contrast */
-  background-color: #f4f4f4;
-  color: #333;
+/* Fonts are loaded with next/font in app/layout.tsx and exposed as CSS variables */
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
-
-/* 
-  HERO SECTION 
-  Large banner area at the top with background image and call-to-action.
-*/
-
-.hero {
-  /* Sets the background image (can be changed dynamically via JS) */
-  background-image: url('/images/UploadedImage4.jpg');
-
-  /* Ensures the image covers the whole area and is centered */
-  background-size: cover;
-  background-position: center;
-
-  /* Text color and padding */
-  color: white;
-  padding: 60px 20px;
-
-  /* Centers text and positions content relative for overlays */
-  text-align: center;
-  position: relative;
-}
-
-
-/* 
-  Call-to-Action Buttons inside Hero 
-*/
-
-.cta-buttons {
-  margin-top: 1em;
-
-  /* Places buttons in a flexible row that wraps if screen is narrow */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-}
-
-.cta-buttons .btn {
-  background-color: white;
-  color: #4CAF50; /* Green */
-  padding: 0.75em 1.5em;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-
-  /* Smooth zoom animation on hover */
-  transition: transform 0.3s ease;
-}
-
-.cta-buttons .btn:hover {
-  transform: scale(1.05);
-}
-
-
-/* 
-  Section Styling (for services, portfolio, contact, etc.)
-*/
-
-section {
-  padding: 2em;
-  text-align: center;
-}
-
-
-/* 
-  Services Section Grid 
-  Each service is placed in a responsive grid layout.
-*/
-
-.service-grid {
-  display: grid;
-
-  /* Adjusts column count based on screen size */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-
-  gap: 1em;
-  margin-top: 1em;
-}
-
-
-/* 
-  Portfolio Section - Image Grid 
-*/
-
-.images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1em;
-  justify-items: center;
-  margin-top: 1em;
-}
-
-.images img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-
-  /* Adds smooth transition for zoom and shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.images img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Adds depth on hover */
-}
-
-/* Overlay background when image is zoomed */
-.image-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark translucent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* Zoomed image styling */
-.image-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  animation: zoomIn 0.3s ease;
-}
-
-/* Fade/zoom animation */
-@keyframes zoomIn {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Keep anchor targets clear of the sticky header */
+    scroll-padding-top: 6rem;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
+
+  body {
+    @apply bg-ink-50 font-sans text-ink-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink-950;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-gold-200 text-ink-950;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold-500;
   }
 }
 
-/* 
-  Contact Form Styling 
-*/
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-
-  /* Centers the form and limits its width */
-  max-width: 600px;
-  margin: auto;
+/* Long-form copy (privacy policy, etc.) */
+@layer components {
+  .prose-content h2 {
+    @apply mt-10 mb-3 text-2xl;
+  }
+  .prose-content p,
+  .prose-content li {
+    @apply leading-relaxed text-ink-700;
+  }
+  .prose-content p {
+    @apply mb-4;
+  }
+  .prose-content a {
+    @apply font-medium text-gold-700 underline underline-offset-2;
+  }
 }
 
-input, textarea, button {
-  padding: 0.75em;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Leaflet map: Tailwind's image reset breaks map tiles */
+.leaflet-container img {
+  max-width: none !important;
 }
 
-/* Submit Button Styles */
-button {
-  background-color: #4CAF50; /* Green background */
-  color: white;
-  border: none;
-  cursor: pointer;
-
-  transition: transform 0.3s ease;
-}
-
-button:hover {
-  transform: scale(1.05); /* Button zooms in slightly on hover */
-}
-
-
-/* 
-  Footer Styling 
-*/
-
-footer {
-  text-align: center;
-  padding: 1em;
-  background: #333;
-  color: white;
-}
-
-
-/* 
-  Social Media Icons in Footer 
-*/
-
-.social-media {
-  margin-top: 1em;
-
-  /* Places icons in a row with space between */
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-
-.social-media img {
-  width: 32px;
-  height: 32px;
-
-  transition: transform 0.3s ease;
-}
-
-.social-media img:hover {
-  transform: scale(1.2); /* Zoom on hover */
-}
-
-
-/* 
-  Reveal Animation for Scrolling Elements 
-  (Optional JavaScript can toggle the "visible" class)
-*/
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.top-nav {
-  font-size: 25px;
-  display: flex;
-  gap: 50px;
-  justify-content: center;
-  margin: 20px 0;
-}
-.top-nav a {
-  padding: 8px 16px;
-  background-color: white;
-  color: #4CAF50; /* Green text */
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* Scroll reveal for items */
-.reveal-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.reveal-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.testimonials-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.testimonials-section h2 {
-  font-size: 3rem;
-  margin-bottom: 50px;
-  color: #222;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.testimonial-card {
-  /* background: linear-gradient(135deg, #ffffff, #f0f0f0); */
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  padding: 35px 25px;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-}
-
-.testimonial-card::before {
-  content: '“';
-  font-size: 3.5rem;
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  color: #2575fc; /* accent color */
-  font-family: serif;
-}
-
-.testimonial-card p {
-  margin: 0;
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-}
-/* Ensure header is always above everything else */
-header, .header {
-  position: relative;
-  z-index: 1000; /* ok */
-}
-
-/* Prevent background from scrolling when menu is open (backup) */
-body.menuOpen {
-  overflow: hidden;
-  height: 100vh;
-}
-
-/* Make sure fixed header doesn't overlap content */
-main, section, .hero {
-  margin-top: 70px; /* same as header height */
-  z-index: 0; /* ensure dropdown > hero */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

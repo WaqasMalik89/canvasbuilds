@@ -11,8 +11,7 @@
       {
         "source": "/:path*",
         "has": [
-          { "type": "host", "value": "canvasbuilds.ca" },
-          { "type": "host", "value": "http://canvasbuilds.ca" }
+          { "type": "host", "value": "canvasbuilds.ca" }
         ],
         "destination": "https://www.canvasbuilds.ca/:path*",
         "permanent": true
@@ -39,4 +38,4 @@
         ]
       }
     ]
-  }  
+  }

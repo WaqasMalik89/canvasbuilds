@@ -1,56 +1,85 @@
-import Head from "next/head";
-import siteConfig from "../config/siteConfig";
-// These components mostly render static content or server-side rendered content
-import Services from '../components/Services';  // Shows the list of services offered
-import Portfolio from '../components/Portfolio';  // Displays past projects or portfolio items
-import Testimonials from '../components/Testimonials';  // Shows customer reviews or testimonials
+import Image from 'next/image';
+import { ButtonLink } from '@/components/ui/Button';
+import Section from '@/components/ui/Section';
+import AreaCards from '@/components/sections/AreaCards';
+import ContactSection from '@/components/sections/ContactSection';
+import FaqSection from '@/components/sections/FaqSection';
+import FeaturedProject from '@/components/sections/FeaturedProject';
+import HomeHero from '@/components/sections/HomeHero';
+import ProcessSteps from '@/components/sections/ProcessSteps';
+import ReviewsSection from '@/components/sections/ReviewsSection';
+import ServiceCards from '@/components/sections/ServiceCards';
+import StatsBar from '@/components/sections/StatsBar';
+import { generalFaqs, homeContent } from '@/content/home';
+import { getFeaturedProject } from '@/content/projects';
+import { buildMetadata } from '@/lib/seo/metadata';
 
-// These components need client-side JavaScript to work (e.g., sliders, forms)
-import HeroCarousel from '../components/HeroBannerCarousel';  // A sliding banner at the top of the homepage
-import ContactForm from '../components/ContactForm';  // Form for visitors to send messages or inquiries
+export const metadata = buildMetadata({ ...homeContent.seo, path: '/', absoluteTitle: true, image: homeContent.hero.image.src });
 
-export default function Home() {
+// Rebuild once a day so Google reviews stay fresh.
+export const revalidate = 86400;
+
+export default function HomePage() {
+  const bathroom = getFeaturedProject('kitchener-waterloo-bathroom');
+  const kitchen = getFeaturedProject('mississauga-home-renovation');
+  const mediaWall = getFeaturedProject('kitchener-waterloo-media-wall');
+  const { intro } = homeContent;
+
   return (
     <>
-      <Head>
-        <title>{siteConfig.title}</title>
-        <meta name="description" content={siteConfig.description} />
-        <meta name="robots" content={siteConfig.robots} />
-        <link rel="canonical" href={siteConfig.canonical} />
+      <HomeHero />
+      <StatsBar />
 
-        {/* Open Graph */}
-        <meta property="og:title" content={siteConfig.og.title} />
-        <meta property="og:description" content={siteConfig.og.description} />
-        <meta property="og:url" content={siteConfig.og.url} />
-        <meta property="og:type" content={siteConfig.og.type} />
-        <meta property="og:image" content={siteConfig.og.image} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+      <Section tone="white">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold-700">Why Canvas Builds</p>
+            <h2 className="text-[1.75rem] leading-tight sm:text-4xl">{intro.title}</h2>
+            {intro.paragraphs.map((p) => (
+              <p key={p.slice(0, 32)} className="mt-4 text-base leading-relaxed text-ink-600 sm:mt-5 sm:text-lg">
+                {p}
+              </p>
+            ))}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href="/about" variant="dark">
+                About us
+              </ButtonLink>
+              <ButtonLink href="/projects" variant="outline">
+                View projects
+              </ButtonLink>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card-hover)] sm:aspect-[16/10] lg:aspect-[4/5]">
+            <Image
+              src="/images/bathrooms/kitchener-waterloo-bathroom-finished.jpg"
+              alt="Bathroom renovation with glass walk-in shower and floating vanity"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </Section>
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content={siteConfig.twitter.card} />
-        <meta name="twitter:title" content={siteConfig.twitter.title} />
-        <meta
-          name="twitter:description"
-          content={siteConfig.twitter.description}
-        />
-        <meta name="twitter:image" content={siteConfig.twitter.image} />
-        
-      </Head>
-        {/* Render interactive hero banner carousel */}
-        <HeroCarousel />
+      <ServiceCards
+        tone="default"
+        title="Renovation services"
+        intro="From a single bathroom to a whole-home remodel, we manage design, permits, licensed trades and finishing as one project."
+      />
 
-{/* Main page content container with some padding and max width */}
-<main style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px' }}>
-  {/* Section showing offered services */}
-  <Services />
-  {/* Section showing past portfolio projects */}
-  <Portfolio />
-  {/* Section showing customer testimonials */}
-  <Testimonials />
-  {/* Contact form so visitors can send messages */}
-  <ContactForm />
-</main>
+      {bathroom && <FeaturedProject project={bathroom} tone="white" showSteps={false} moreHref="/projects" />}
+      {kitchen && (
+        <FeaturedProject id="kitchen" project={kitchen} tone="default" showSteps={false} moreHref="/services/kitchen-remodeling#before-after" moreLabel="See the full story" />
+      )}
+      {mediaWall && (
+        <FeaturedProject id="media-wall" project={mediaWall} tone="white" showSteps={false} moreHref="/services/media-wall-installation" moreLabel="See the full build" />
+      )}
+
+      <AreaCards tone="default" />
+      <ProcessSteps />
+      <ReviewsSection />
+      <FaqSection faqs={generalFaqs} />
+      <ContactSection tone="default" />
     </>
   );
 }

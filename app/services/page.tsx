@@ -1,41 +1,33 @@
-import Head from "next/head";
-import ServicesSection from "@/components/ServicesSection";
-import Link from 'next/link'; // <--- 1. Import the Link component
+import AreaCards from '@/components/sections/AreaCards';
+import ContactSection from '@/components/sections/ContactSection';
+import PageHero from '@/components/sections/PageHero';
+import ProcessSteps from '@/components/sections/ProcessSteps';
+import ServiceCards from '@/components/sections/ServiceCards';
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Renovation Services — Kitchens, Bathrooms, Basements & More',
+  description:
+    'Home renovation services in Kitchener-Waterloo, Bradford, Toronto and the GTA: kitchens, bathrooms, basements and legal suites, load-bearing wall removal, flooring and painting.',
+  path: '/services',
+});
 
 export default function ServicesPage() {
   return (
     <>
-      <Head>
-        <title>Our Services | Canvas Builds Inc.</title>
-        <meta
-          name="description"
-          content="Explore our premium landscaping and outdoor renovation services including design, installation, and maintenance."
-        />
-      </Head>
-
-      {/* --- NEW INTERNAL LINK BLOCK --- */}
-      <div style={{ 
-        padding: '20px', 
-        backgroundColor: '#f5f5f5', 
-        textAlign: 'center',
-        margin: '20px 0'
-      }}>
-        <h2>
-          Serving Toronto? Find Your Local Experts Here
-        </h2>
-        <p>
-          If you are located in the city core, please view our dedicated page for 
-          <Link 
-            href="/services/toronto/renovation-contractors" 
-            style={{ fontWeight: 'bold', color: '#0070f3', marginLeft: '5px' }}
-          >
-            Toronto Home Renovation Contractors.
-          </Link>
-        </p>
-      </div>
-      {/* ------------------------------- */}
-
-      <ServicesSection />
+      <PageHero
+        eyebrow="Our services"
+        title="Renovation services, managed by one team"
+        intro={[
+          'From a single bathroom to a whole-home remodel, we handle design, permits, licensed trades and finishing as one project — in Kitchener-Waterloo, Bradford, Toronto and the GTA.',
+        ]}
+        breadcrumbs={[{ name: 'Services', path: '/services' }]}
+        secondaryCta={{ label: 'View projects', href: '/projects' }}
+      />
+      <ServiceCards eyebrow="Choose a service" title="What can we help you build?" />
+      <ProcessSteps />
+      <AreaCards />
+      <ContactSection />
     </>
   );
 }
