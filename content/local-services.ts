@@ -126,6 +126,92 @@ export const localServicePages: LocalServicePage[] = [
       },
     ],
   },
+  {
+    area: 'kitchener-waterloo',
+    service: 'media-wall-installation',
+    seo: {
+      title: 'Media Wall Kitchener-Waterloo | Custom TV Walls & Fireplaces',
+      description:
+        'Custom media walls and TV walls in Kitchener, Waterloo & Cambridge: recessed TV niches, electric fireplaces, hidden wiring and LED-lit shelving. See a local build.',
+    },
+    h1: 'Custom Media Walls in Kitchener-Waterloo',
+    eyebrow: 'Kitchener · Waterloo · Cambridge',
+    intro: [
+      'We design and build custom media walls across Kitchener, Waterloo and Cambridge from our Waterloo office — recessed TV niches, electric fireplace openings, soundbar ledges, built-in shelf towers and warm LED lighting, with every cable hidden inside the wall.',
+      'Below is a media wall we built in a Kitchener-Waterloo living room, from bare studs to the finished, lit wall — with the real measurements, so you can see exactly how one is put together.',
+    ],
+    heroPhoto: {
+      src: '/images/media-walls/kitchener-waterloo-media-wall-finished-night.jpg',
+      alt: 'Custom media wall in a Kitchener-Waterloo living room with a recessed 85-inch TV, open media ledge and warm LED-lit shelves',
+    },
+    highlights: [
+      { title: 'Local Waterloo office', text: 'Site measures, drawings and the build are handled by our Kitchener-Waterloo team.' },
+      { title: 'Sized to your room', text: 'TV size and height set from your seating distance, ceiling and fireplace — marked on the wall before framing.' },
+      { title: 'No visible wires', text: 'Recessed TV box, conduit and in-wall rated cables planned before the drywall goes up.' },
+    ],
+    popular: {
+      heading: 'Popular media wall features in Kitchener-Waterloo',
+      items: [
+        'Recessed TV niches for 75", 85" and 98" TVs',
+        'Linear electric fireplaces under the TV',
+        'Soundbar niches and open media ledges',
+        'Side shelf towers in drywall, MDF or solid oak',
+        'LED strip or puck lighting in every niche, on a dimmer',
+        'Closed lower cabinets to hide consoles and receivers',
+        'Basement media walls and home theatre feature walls',
+      ],
+    },
+    sections: [
+      {
+        heading: 'The Kitchener-Waterloo wall, measured',
+        paragraphs: [
+          'The wall above holds an **85" TV** in a recessed niche with a 0.75" gap all round, the bottom of the niche **40" from the floor**. Below it sits a soundbar niche at 32"–36.5", and a **72" fireplace opening** is framed 10" off the floor. The TV and fireplace frame is 13.5" deep, and the side shelf towers are 24" wide and 11" deep.',
+          'Every number was set from the homeowners’ seating distance and the size of their TV. Our [media wall design & selection guide](/blog/media-wall-design-guide) shows the full measured drawing and how to choose each size for your own room.',
+        ],
+      },
+      {
+        heading: 'Media walls in Kitchener-Waterloo homes',
+        paragraphs: [
+          'Many Waterloo Region living rooms — in newer builds in Clair Hills, Laurelwood and Doon South as much as older homes in Forest Heights and Stanley Park — have a long, plain wall facing the sofa and no fireplace. A framed media wall gives that wall a purpose: the TV, fireplace, speakers and storage in one built-in piece.',
+          'Because we build out from the existing wall, there is room for wiring, a fireplace insert and recessed niches without cutting into exterior walls. Finished basements are another popular spot, where a media wall becomes the centre of a family room or home theatre.',
+        ],
+      },
+      {
+        heading: 'Permits and electrical',
+        paragraphs: [
+          'A non-structural media wall usually doesn’t need a building permit in Kitchener, Waterloo or Cambridge. New outlets and circuits for the TV, fireplace and lighting are installed by a licensed electrician, with an ESA notification where required. A gas fireplace also needs a licensed gas fitter and venting.',
+        ],
+      },
+    ],
+    featuredProjectId: 'kitchener-waterloo-media-wall',
+    testimonials: kw.testimonials,
+    faqs: [
+      {
+        q: 'How much does a media wall cost in Kitchener-Waterloo?',
+        a: 'It depends on the width of the wall, whether you add a fireplace, the shelving material and the lighting. A drywall media wall with lit niches costs less than one with MDF or solid oak cabinetry. We visit, measure and send a written, itemized quote at no cost.',
+      },
+      {
+        q: 'How long does it take to build a media wall?',
+        a: 'Most media walls take about one to two weeks on site, from framing to paint. Drywall compound needs drying time between coats, and a fireplace or new circuits can add a few days.',
+      },
+      {
+        q: 'What size TV suits my living room?',
+        a: 'Measure from the front of your sofa to the wall: 6.5–8.5 ft suits a 65" TV, 7.5–10 ft a 75", 8.5–11.5 ft an 85–86" and 10–13 ft a 98". We size a recessed niche one TV size larger, so your next TV still fits.',
+      },
+      {
+        q: 'Can you put a fireplace under the TV?',
+        a: 'Yes. We frame the opening for an electric fireplace insert and set the TV height around its required clearance — the Kitchener-Waterloo wall above has a 72" fireplace opening framed under an 85" TV. Gas fireplaces need more clearance, a gas line and venting.',
+      },
+      {
+        q: 'Do I need a permit for a media wall in Kitchener or Waterloo?',
+        a: 'Usually not, because a media wall is non-structural. New electrical work may need an ESA notification, which our licensed electrician handles.',
+      },
+      {
+        q: 'Which areas do you serve for media walls?',
+        a: 'Kitchener, Waterloo and Cambridge, plus Guelph, Elmira, Baden, New Hamburg, Breslau and Ayr.',
+      },
+    ],
+  },
 ];
 
 export function getLocalServicePage(area: string, service: string) {

@@ -20,8 +20,11 @@ const LAST_UPDATED: Record<string, string> = {
   '/services/media-wall-installation': '2026-10-29',
   '/services/bathroom-renovation': '2026-10-29',
   '/areas-we-serve/kitchener-waterloo/bathroom-renovation': '2026-10-31',
+  '/areas-we-serve/kitchener-waterloo/media-wall-installation': '2026-10-31',
   '/projects': '2026-10-31',
 };
+// The blog index changes whenever a post does.
+LAST_UPDATED['/blog'] = getPosts().map((p) => p.updated).sort().at(-1) ?? SITE_UPDATED;
 
 const staticPages: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' | 'yearly' }[] = [
   { path: '/', priority: 1, changeFrequency: 'weekly' },

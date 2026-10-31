@@ -106,7 +106,6 @@ export const areas: ServiceArea[] = [
         source: 'Google',
       },
     ],
-    menuLinks: [{ label: 'Media Walls & Built-ins', href: '/services/media-wall-installation' }],
     featuredLinks: [
       {
         title: 'Bathroom renovation in Kitchener-Waterloo',
@@ -115,10 +114,10 @@ export const areas: ServiceArea[] = [
         label: 'Bathrooms in KW',
       },
       {
-        title: 'Custom media walls',
-        text: 'Recessed TV niches, hidden wiring, lit shelving and fireplaces — see the Kitchener-Waterloo wall below.',
-        href: '/services/media-wall-installation',
-        label: 'Media walls',
+        title: 'Media walls in Kitchener-Waterloo',
+        text: 'Recessed TV niches, hidden wiring, lit shelving and fireplaces — with a local build, measured step by step.',
+        href: '/areas-we-serve/kitchener-waterloo/media-wall-installation',
+        label: 'Media walls in KW',
       },
       {
         title: 'Media wall design & selection guide',

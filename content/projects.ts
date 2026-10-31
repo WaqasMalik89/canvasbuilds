@@ -322,6 +322,7 @@ export const featuredProjects: FeaturedProject[] = [
       poster: `${MEDIA}/kitchener-waterloo-media-wall-video-poster.jpg`,
       title: 'Walk through the framing',
       caption: 'A quick look at the framing before drywall — this is the structure that holds the TV and shelves.',
+      uploadDate: '2026-10-23',
     },
   },
   {

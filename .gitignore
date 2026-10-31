@@ -45,3 +45,6 @@ components/*working*.tsx
 components/*working*.ts
 components/*working*.css
 
+
+# local working files (not part of the site)
+/Claude outputs/
