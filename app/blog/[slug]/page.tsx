@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <article className="bg-white pb-20 pt-12 sm:pt-16">
         <Container>
-          <div className={cn('mx-auto', showToc ? 'grid max-w-6xl gap-16 lg:grid-cols-[220px_minmax(0,1fr)]' : 'max-w-3xl')}>
+          <div className={cn('mx-auto', showToc ? 'grid max-w-6xl grid-cols-[minmax(0,1fr)] gap-16 lg:grid-cols-[220px_minmax(0,1fr)]' : 'max-w-3xl')}>
             {showToc && (
               <aside className="hidden lg:block">
                 <div className="sticky top-32">
@@ -129,7 +129,7 @@ export default async function BlogPostPage({ params }: Props) {
               </aside>
             )}
 
-            <div className={cn(showToc && 'max-w-3xl')}>
+            <div className={cn('min-w-0', showToc && 'max-w-3xl')}>
               {post.intro.slice(1).map((p) => (
                 <p key={p.slice(0, 32)} className="mb-10 text-xl leading-9 text-ink-800">
                   {p}
