@@ -6,7 +6,7 @@
 
 import { absoluteUrl, offices, officeMapsUrl, site } from '@/content/site';
 import { areas } from '@/content/areas';
-import type { Faq, Office, Service, ServiceArea } from '@/content/types';
+import type { Faq, Office, ProjectVideo, Service, ServiceArea } from '@/content/types';
 
 const ORG_ID = `${site.url}/#organization`;
 const officeId = (o: Office) => `${site.url}/#office-${o.id}`;
@@ -111,10 +111,57 @@ export function areaSchema(area: ServiceArea) {
   };
 }
 
+/** Local service page: one service, scoped to one area's cities. */
+export function localServiceSchema(p: { name: string; serviceType: string; description: string; path: string; cities: string[] }) {
+  const url = absoluteUrl(p.path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${url}#service`,
+    name: p.name,
+    serviceType: p.serviceType,
+    description: p.description,
+    url,
+    provider: { '@id': ORG_ID },
+    areaServed: cityList(p.cities),
+  };
+}
+
 export function faqSchema(faqs: Faq[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  };
+}
+
+/** Article markup for blog posts / guides. */
+export function articleSchema(p: { title: string; description: string; path: string; image: string; published: string; updated: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: p.title,
+    description: p.description,
+    image: [absoluteUrl(p.image)],
+    datePublished: p.published,
+    dateModified: p.updated,
+    mainEntityOfPage: absoluteUrl(p.path),
+    author: { '@id': ORG_ID, '@type': 'Organization', name: site.name, url: site.url },
+    publisher: { '@id': ORG_ID },
+  };
+}
+
+/** VideoObject for a self-hosted project video (needs an upload date). */
+export function videoSchema(v: ProjectVideo & { uploadDate: string }, pagePath: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: v.title,
+    description: v.caption,
+    thumbnailUrl: [absoluteUrl(v.poster)],
+    contentUrl: absoluteUrl(v.src),
+    uploadDate: v.uploadDate,
+    url: absoluteUrl(pagePath),
+    publisher: { '@id': ORG_ID },
   };
 }

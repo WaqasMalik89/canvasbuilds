@@ -130,7 +130,7 @@ export const services: Service[] = [
       },
     ],
     faqs: [
-      { q: 'Which kitchen cabinets are better: thermofoil, painted MDF or solid wood?', a: 'Thermofoil is the most affordable and easy to clean, painted MDF gives a smooth custom-colour finish at a mid-range price, and solid wood such as oak or maple is the most durable and can be refinished. We show you samples of each and recommend what fits your budget and style.' },
+      { q: 'Do you help choose cabinets and finishes?', a: 'Yes. We bring door samples in thermofoil, painted MDF and solid wood to your home, then show your kitchen in 3D with the colours, countertop and hardware you’re considering, so you can compare them before anything is ordered.' },
       { q: 'How long does a kitchen remodel take?', a: 'It depends on the size of the kitchen, whether walls or plumbing move and the lead time for cabinets and countertops. You get a written schedule with your quote.' },
       { q: 'Do I need a permit to renovate my kitchen?', a: 'Replacing cabinets and countertops generally does not. Removing walls, adding plumbing or significant electrical changes usually do. We confirm this during the estimate.' },
       { q: 'Can you remove a wall to make my kitchen open concept?', a: 'Yes. If the wall is load-bearing we arrange the engineering and permit and install a properly sized beam before the wall comes out.' },
@@ -154,9 +154,9 @@ export const services: Service[] = [
     icon: 'bath',
     summary: 'Walk-in showers, wall-hung toilets, tile and vanities — with waterproofing done properly behind every wall.',
     seo: {
-      title: 'Bathroom Renovation in Kitchener-Waterloo, Bradford & GTA',
+      title: 'Bathroom Renovation: Walk-in Showers & Ensuites',
       description:
-        'Bathroom renovations in Kitchener, Waterloo, Cambridge, Bradford, Toronto and the GTA. Walk-in showers, wall-hung toilets, tile and waterproofing done right. Free estimates.',
+        'Bathroom renovation contractors for main bathrooms, ensuites, powder rooms and basement bathrooms. Walk-in showers, wall-hung toilets, tile and waterproofing done right. Serving Bradford, Toronto, the GTA and Waterloo Region. Free estimates.',
     },
     h1: 'Bathroom Renovation',
     intro: [
@@ -183,6 +183,12 @@ export const services: Service[] = [
         heading: 'Basement bathrooms',
         paragraphs: [
           'Adding a bathroom to a basement usually means new drains and venting, which requires a plumbing permit. We plan the layout around your existing plumbing to keep costs reasonable and handle the permit and inspections.',
+        ],
+      },
+      {
+        heading: 'Renovating a bathroom in Kitchener-Waterloo?',
+        paragraphs: [
+          'See our [Kitchener-Waterloo bathroom renovation page](/areas-we-serve/kitchener-waterloo/bathroom-renovation) for two local projects, permits in Kitchener, Waterloo and Cambridge, and reviews from KW homeowners.',
         ],
       },
     ],
@@ -212,51 +218,71 @@ export const services: Service[] = [
     },
     h1: 'Custom Media Walls & TV Feature Walls',
     intro: [
-      'A media wall turns a plain living-room wall into the focal point of the room. We design and build custom TV walls with a recessed TV niche, a media shelf for your components, built-in display shelving and LED accent lighting — with every cable hidden inside the wall.',
-      `Each wall is designed around your room, your TV size and how you use the space, then framed, finished and painted by our own team across ${AREAS}.`,
+      'A media wall turns a plain living-room wall into the focal point of the room. We design and build custom TV walls with a recessed TV niche, a soundbar ledge, built-in shelving and warm LED lighting — and an electric fireplace if you want one — with every cable hidden inside the wall.',
+      `Each wall is planned around your TV, your seating distance and your room, then framed, finished and painted by our own team across ${AREAS}.`,
     ],
     included: [
-      'Design and layout sized to your TV, room and furniture',
-      'Custom wood framing anchored to the existing wall',
-      'Solid backing for a secure flush or tilting TV mount',
-      'Hidden power, HDMI and low-voltage wiring',
-      'Recessed TV niche, media shelf and display niches',
-      'LED puck or strip lighting in shelves and niches',
-      'Drywall, corner bead, taping, sanding, primer and paint',
-      'Optional electric fireplace insert and soundbar recess',
+      'Layout and measured drawings sized to your TV, room and seating',
+      'Custom 2x4 bump-out framing anchored to the existing wall',
+      'Solid wood blocking for a secure fixed, tilt or pull-down mount',
+      'Recessed TV box, 2" conduit and in-wall rated HDMI 2.1 and Cat6',
+      'Recessed TV niche, soundbar ledge and side shelf towers',
+      'LED strip or 2" pot lights in the niches, on a dimmer',
+      'Drywall, corner bead, taping, primer and paint',
+      'Optional electric fireplace opening with its own power',
     ],
     sections: [
       {
         heading: 'Designed around your TV and your room',
         paragraphs: [
-          'We start with the size of your TV, your seating distance and the width of the wall. From there we plan the TV niche, shelf heights and side towers so the wall looks balanced and the TV sits at a comfortable viewing height.',
+          'We start with your seating distance. As a guide, 6.5–8.5 ft suits a 65" TV, 7.5–10 ft a 75", 8.5–11.5 ft an 85–86" and 10–13 ft a 98" — an 85–86" TV suits most 9–11 ft living rooms. Without a fireplace, we set the centre of the screen at seated eye level, about 42" from the floor.',
+          'From there we size the niche, soundbar ledge and side towers so the wall looks balanced. For a recessed TV, we usually size the niche one TV size larger than today’s, so your next TV still fits.',
+        ],
+      },
+      {
+        heading: 'A TV over a fireplace',
+        paragraphs: [
+          'With a fireplace below, the fireplace sets the TV height: about 10" from the floor to the firebox, the flame opening, then a safety gap — 8–12" for most electric units, 12–24" or more for gas. With a 16" flame and a 12" gap, the bottom of the TV sits at about 38". That’s higher than eye level, so we often recommend a tilt or pull-down mount. The fireplace’s installation manual always has the final say, and we never shrink the gap to lower the TV.',
+        ],
+      },
+      {
+        heading: 'Choose your side shelving',
+        paragraphs: ['The towers on either side of the TV can be built three ways, or mixed — for example drywall niches with oak shelf boards.'],
+        options: [
+          { name: 'Drywall niches', bestFor: 'Minimalist, budget-conscious', text: 'Seamless and painted to match the wall. Quickest to build, but edges can chip.' },
+          { name: 'MDF cabinetry', bestFor: 'Modern, hides equipment', text: 'Crisp painted or melamine finish, with closed lower cabinets for media equipment.' },
+          { name: 'Solid oak', bestFor: 'Premium, warm feel', text: 'Natural oak grain, the strongest shelves, and it can be refinished later.' },
         ],
       },
       {
         heading: 'Clean lines, no visible wires',
         paragraphs: [
-          'Because the wall is framed out from the original, power outlets, HDMI and network cables run inside it. The result is a clean, built-in look with nothing hanging below the TV. Any new electrical work is done by a licensed electrician.',
+          'Because the wall is framed out from the original, nothing shows on the finished wall. A recessed TV box keeps plugs behind the TV, a 2" conduit runs to the equipment cabinet so cables can be upgraded later, and HDMI 2.1 and Cat6 cables are rated for use inside walls. New outlets are installed by a licensed electrician.',
         ],
       },
       {
-        heading: 'Media walls in basements and living rooms',
+        heading: 'Plan yours with our design guide',
         paragraphs: [
-          'Media walls are one of the most popular upgrades in Kitchener-Waterloo living rooms and finished basements. If you are finishing your basement, we can build the media wall as part of the same project.',
+          'Our [media wall design & selection guide](/blog/media-wall-design-guide) walks through all eight decisions — TV size, mounting height, fireplace, recessed or surface mount, brackets, wiring, shelving and lighting — with our recommendation for each and the full measurements of the Kitchener-Waterloo wall below.',
         ],
       },
     ],
     faqs: [
+      { q: 'How do you decide the TV size and height for my room?', a: 'At the site visit we measure your seating distance and ceiling height and check for a fireplace, then mark the TV size and height on the wall so you can see it in place before any framing starts.' },
+      { q: 'Should the TV be recessed or surface-mounted?', a: 'A recessed niche gives a flush, built-in look but fixes the TV size, so we size it one TV size larger than today’s. A surface mount stands 1.5–3" off the wall and fits any future TV — a good choice if you plan to upgrade within a few years.' },
+      { q: 'Can you hide the TV wires inside the wall?', a: 'Yes. Every build includes a recessed TV box, a 2" conduit to the equipment cabinet and in-wall rated HDMI 2.1 and Cat6 cables, so no cable shows on the finished wall.' },
+      { q: 'Can you add a fireplace to my media wall?', a: 'Yes. We frame the opening for an electric fireplace insert, plan the power it needs and set the TV height around its required clearance. A gas insert also needs a gas line and venting, which a licensed gas fitter installs.' },
       { q: 'How long does it take to build a media wall?', a: 'Most media walls take about one to two weeks from framing to paint, depending on size, lighting and finishes. Drywall compound needs drying time between coats. You get a written schedule with your quote.' },
-      { q: 'Can you hide the TV wires inside the wall?', a: 'Yes. The wall is framed out from the existing wall, so power, HDMI and network cables run inside it and nothing is visible below the TV.' },
-      { q: 'Can a media wall include a fireplace?', a: 'Yes. We can frame an opening for an electric fireplace insert below or beside the TV and plan the power for it.' },
       { q: 'Do I need a permit for a media wall?', a: 'A non-structural media wall usually does not need a building permit. New electrical circuits may need an ESA notification, which our licensed electrician handles.' },
     ],
     photos: [
-      { src: '/images/media-walls/kitchener-waterloo-media-wall-after.jpg', alt: 'Custom media wall with recessed TV niche and LED-lit display niches in Kitchener-Waterloo' },
+      { src: '/images/media-walls/kitchener-waterloo-media-wall-finished-night.jpg', alt: 'Custom media wall in Kitchener-Waterloo with recessed 85-inch TV, warm LED-lit shelves and soundbar niche' },
+      { src: '/images/media-walls/kitchener-waterloo-media-wall-measured.jpg', alt: 'Finished media wall with measurements for the TV niche, soundbar niche, fireplace opening and side shelves' },
       { src: '/images/media-walls/kitchener-waterloo-media-wall-step-6-finished-tv.jpg', alt: 'Living room media wall with wall-mounted TV and built-in shelving' },
       { src: '/images/media-walls/kitchener-waterloo-media-wall-built-in-shelving-side-view.jpg', alt: 'Side view of a custom media wall with built-in shelving towers' },
     ],
     featuredProjectId: 'kitchener-waterloo-media-wall',
+    guidesTitle: 'Planning your media wall?',
     related: ['basement-finishing', 'home-renovation', 'painting', 'flooring-installation'],
   },
   {

@@ -14,10 +14,12 @@ interface Props {
   after: Photo;
   beforeLabel?: string;
   afterLabel?: string;
+  /** 9:16 frame for tall full-room photos. */
+  tall?: boolean;
   className?: string;
 }
 
-export default function BeforeAfterSlider({ before, after, beforeLabel = 'Before', afterLabel = 'After', className }: Props) {
+export default function BeforeAfterSlider({ before, after, beforeLabel = 'Before', afterLabel = 'After', tall, className }: Props) {
   const [pos, setPos] = useState(50);
   const frame = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -36,12 +38,12 @@ export default function BeforeAfterSlider({ before, after, beforeLabel = 'Before
   ];
 
   return (
-    <div className={cn('mx-auto w-full max-w-lg', className)}>
+    <div className={cn('mx-auto w-full', tall ? 'max-w-sm' : 'max-w-lg', className)}>
       <div
         ref={frame}
         className={cn(
           'relative w-full cursor-ew-resize touch-pan-y select-none overflow-hidden has-[input:focus-visible]:ring-4 has-[input:focus-visible]:ring-gold-300 rounded-[var(--radius-card)] bg-ink-200 shadow-[var(--shadow-card-hover)]',
-          portrait ? 'aspect-[3/4]' : 'aspect-[4/3]',
+          tall ? 'aspect-[9/16]' : portrait ? 'aspect-[3/4]' : 'aspect-[4/3]',
         )}
         onPointerDown={(e) => {
           dragging.current = true;

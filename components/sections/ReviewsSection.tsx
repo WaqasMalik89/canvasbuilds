@@ -148,7 +148,7 @@ export default async function ReviewsSection({ title = 'What our clients say', o
           </li>
         )}
       </ul>
-      {feed.live && <p className="mt-4 text-xs text-ink-400">Reviews powered by Google</p>}
+      {feed.live && <p className="mt-4 text-xs text-ink-500">Reviews powered by Google</p>}
     </Section>
   );
 }

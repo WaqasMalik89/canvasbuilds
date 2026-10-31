@@ -16,7 +16,7 @@ export const areas: ServiceArea[] = [
     seo: {
       title: 'Home Renovation Kitchener-Waterloo | Kitchens, Baths & Basements',
       description:
-        'Home renovation contractor in Kitchener, Waterloo and Cambridge. Kitchens, bathrooms, basements and legal suites, wall removal and flooring. Local Waterloo office. Free estimates.',
+        'Renovation contractor in Kitchener, Waterloo & Cambridge: kitchens, bathrooms, basements, media walls and legal suites. Local Waterloo office, free estimates.',
     },
     h1: 'Home Renovation in Kitchener-Waterloo',
     intro: [
@@ -24,9 +24,8 @@ export const areas: ServiceArea[] = [
       'Waterloo Region has everything from 1970s backsplits to brand-new subdivisions, and each comes with different challenges. We plan every project around the house you have.',
     ],
     heroPhoto: {
-      src: '/images/bathrooms/kitchener-waterloo-bathroom-finished.jpg',
-      alt: 'Bathroom renovation in Kitchener-Waterloo with glass walk-in shower and floating vanity',
-      portrait: true,
+      src: '/images/media-walls/kitchener-waterloo-media-wall-finished-night.jpg',
+      alt: 'Custom media wall in a Kitchener-Waterloo living room with a recessed TV and LED-lit shelves',
     },
     officeId: 'waterloo',
     cities: ['Kitchener', 'Waterloo', 'Cambridge', 'Guelph', 'Elmira', 'Baden', 'New Hamburg', 'Breslau', 'Ayr'],
@@ -64,7 +63,7 @@ export const areas: ServiceArea[] = [
     highlights: [
       { title: 'Local Waterloo office', text: 'Our Kitchener-Waterloo crew is based in Waterloo, close to your project.' },
       { title: 'KW permits handled', text: 'We apply to the City of Kitchener, Waterloo or Cambridge and book inspections.' },
-      { title: 'Real local work', text: 'See our recent Kitchener-Waterloo bathroom renovation, step by step.' },
+      { title: 'Real local work', text: 'Recent KW projects: a full bathroom rebuild, a bathroom refresh and a custom media wall.' },
     ],
     faqs: [
       {
@@ -107,7 +106,28 @@ export const areas: ServiceArea[] = [
         source: 'Google',
       },
     ],
-    featuredProjectId: 'kitchener-waterloo-bathroom',
+    menuLinks: [{ label: 'Media Walls & Built-ins', href: '/services/media-wall-installation' }],
+    featuredLinks: [
+      {
+        title: 'Bathroom renovation in Kitchener-Waterloo',
+        text: 'Walk-in showers, ensuites and bathroom refreshes — with two local before-and-after projects and KW reviews.',
+        href: '/areas-we-serve/kitchener-waterloo/bathroom-renovation',
+        label: 'Bathrooms in KW',
+      },
+      {
+        title: 'Custom media walls',
+        text: 'Recessed TV niches, hidden wiring, lit shelving and fireplaces — see the Kitchener-Waterloo wall below.',
+        href: '/services/media-wall-installation',
+        label: 'Media walls',
+      },
+      {
+        title: 'Media wall design & selection guide',
+        text: 'TV size, mounting height, fireplace clearances, shelving and lighting — with our recommendation for each.',
+        href: '/blog/media-wall-design-guide',
+        label: 'Read the guide',
+      },
+    ],
+    featuredProjectId: 'kitchener-waterloo-media-wall',
   },
   {
     slug: 'bradford',

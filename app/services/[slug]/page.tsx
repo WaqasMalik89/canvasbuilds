@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { LuArrowRight, LuMapPin } from 'react-icons/lu';
+import RichText from '@/components/blog/RichText';
 import JsonLd from '@/components/seo/JsonLd';
 import ContactSection from '@/components/sections/ContactSection';
 import FaqSection from '@/components/sections/FaqSection';
@@ -14,6 +15,8 @@ import CheckList from '@/components/ui/CheckList';
 import Section from '@/components/ui/Section';
 import { areaHref, areas } from '@/content/areas';
 import { getFeaturedProject } from '@/content/projects';
+import { postHref, postsForService } from '@/content/blog';
+import { findLocalServiceHref } from '@/content/local-services';
 import { getService, getServices, services } from '@/content/services';
 import { site } from '@/content/site';
 import { buildMetadata } from '@/lib/seo/metadata';
@@ -39,6 +42,7 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   const project = getFeaturedProject(service.featuredProjectId);
+  const guides = postsForService(service.slug);
   const [heroPhoto, ...morePhotos] = service.photos;
   const projectPhotos = new Set([project?.before.src, project?.after.src, ...(project?.steps ?? []).map((s) => s.src)]);
   const gallery = morePhotos.filter((p) => !projectPhotos.has(p.src));
@@ -72,7 +76,7 @@ export default async function ServicePage({ params }: Props) {
                 <h2 className="text-2xl sm:text-3xl">{sec.heading}</h2>
                 {sec.paragraphs.map((p) => (
                   <p key={p.slice(0, 32)} className="mt-4 text-base leading-relaxed text-ink-600 sm:text-lg">
-                    {p}
+                    <RichText text={p} />
                   </p>
                 ))}
                 {sec.options && (
@@ -106,7 +110,7 @@ export default async function ServicePage({ params }: Props) {
               <ul className="mt-4 space-y-3">
                 {areas.map((a) => (
                   <li key={a.slug}>
-                    <Link href={areaHref(a.slug)} className="group flex items-center justify-between gap-3 font-medium text-ink-900 hover:text-gold-700">
+                    <Link href={findLocalServiceHref(a.slug, service.slug) ?? areaHref(a.slug)} className="group flex items-center justify-between gap-3 font-medium text-ink-900 hover:text-gold-700">
                       <span className="flex items-center gap-2">
                         <LuMapPin className="size-4 text-gold-600" aria-hidden="true" />
                         {service.name} in {a.name}
@@ -117,6 +121,21 @@ export default async function ServicePage({ params }: Props) {
                 ))}
               </ul>
             </div>
+            {guides.length > 0 && (
+              <div className="mt-6 rounded-[var(--radius-card)] bg-gold-50 p-8 ring-1 ring-gold-200">
+                <h2 className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-gold-800">{service.guidesTitle ?? 'Planning your project?'}</h2>
+                <ul className="mt-4 space-y-3">
+                  {guides.map((g) => (
+                    <li key={g.slug}>
+                      <Link href={postHref(g.slug)} className="group flex items-start justify-between gap-3 font-semibold text-ink-900 hover:text-gold-700">
+                        {g.title}
+                        <LuArrowRight className="mt-1 size-4 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </aside>
         </div>
       </Section>

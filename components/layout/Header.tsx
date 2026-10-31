@@ -71,7 +71,7 @@ export default function Header({ nav }: { nav: NavItem[] }) {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <a href={site.phone.href} className="text-sm font-semibold text-ink-900 hover:text-gold-700">
+            <a href={site.phone.href} className="hidden text-sm font-semibold text-ink-900 hover:text-gold-700 xl:inline">
               {site.phone.display}
             </a>
             <ButtonLink href="/contact">Free Estimate</ButtonLink>
@@ -97,7 +97,7 @@ export default function Header({ nav }: { nav: NavItem[] }) {
 
 function DesktopNavItem({ item, active }: { item: NavItem; active: boolean }) {
   const linkClass = cn(
-    'flex items-center gap-1 rounded-full px-4 py-2 text-[0.95rem] font-medium transition-colors',
+    'flex items-center gap-1 rounded-full px-3 py-2 text-[0.95rem] font-medium transition-colors xl:px-4',
     active ? 'text-gold-700' : 'text-ink-800 hover:text-gold-700',
   );
 
@@ -132,6 +132,17 @@ function DesktopNavItem({ item, active }: { item: NavItem; active: boolean }) {
                 <span className="block font-semibold text-ink-900">{child.label}</span>
                 {child.description && <span className="mt-0.5 line-clamp-2 block text-sm text-ink-500">{child.description}</span>}
               </Link>
+              {child.children && child.children.length > 0 && (
+                <ul className="mb-2 ml-4 border-l-2 border-gold-300 pl-2">
+                  {child.children.map((sub) => (
+                    <li key={sub.href}>
+                      <Link href={sub.href} className="block rounded-lg px-3 py-1.5 text-sm font-medium text-ink-700 transition-colors hover:bg-ink-50 hover:text-gold-700">
+                        {sub.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
@@ -182,6 +193,20 @@ function MobileMenu({ nav, open, pathname }: { nav: NavItem[]; open: boolean; pa
                             >
                               {child.label}
                             </Link>
+                            {child.children && child.children.length > 0 && (
+                              <ul className="mb-1 ml-3 border-l border-ink-200 pl-3">
+                                {child.children.map((sub) => (
+                                  <li key={sub.href}>
+                                    <Link
+                                      href={sub.href}
+                                      className={cn('block py-1.5 text-[0.95rem]', isActive(pathname, sub.href) ? 'text-gold-700' : 'text-ink-600')}
+                                    >
+                                      {sub.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
                           </li>
                         ))}
                       </ul>

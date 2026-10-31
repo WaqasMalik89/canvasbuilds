@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { LuArrowUpRight, LuMapPin } from 'react-icons/lu';
+import { LuArrowRight, LuArrowUpRight, LuMapPin } from 'react-icons/lu';
 import JsonLd from '@/components/seo/JsonLd';
 import ContactSection from '@/components/sections/ContactSection';
 import FaqSection from '@/components/sections/FaqSection';
@@ -13,6 +13,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { areaHref, areas, getArea } from '@/content/areas';
 import { getFeaturedProject } from '@/content/projects';
 import { getOffice, officeAddress, officeMapsUrl } from '@/content/site';
+import { postHref, postsForArea } from '@/content/blog';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { areaSchema } from '@/lib/seo/schema';
 import { listJoin } from '@/lib/utils';
@@ -37,8 +38,13 @@ export default async function AreaPage({ params }: Props) {
   if (!area) notFound();
 
   const office = area.officeId ? getOffice(area.officeId) : undefined;
+  const guides = postsForArea(area.slug);
   const project = getFeaturedProject(area.featuredProjectId);
   const otherAreas = areas.filter((a) => a.slug !== area.slug);
+
+  // Alternate section backgrounds so neighbouring sections never match.
+  let sectionIndex = 0;
+  const nextTone = () => (sectionIndex++ % 2 === 0 ? 'default' : 'white') as 'default' | 'white';
 
   return (
     <>
@@ -66,16 +72,39 @@ export default async function AreaPage({ params }: Props) {
         </div>
       </section>
 
+      {area.featuredLinks && area.featuredLinks.length > 0 && (
+        <Section tone={nextTone()} spacing="compact">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold-700">Popular in {area.name}</p>
+          <ul className="mt-5 grid gap-5 md:grid-cols-3">
+            {area.featuredLinks.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="group flex h-full flex-col rounded-[var(--radius-card)] border border-ink-200/80 bg-white p-6 shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:border-gold-300 hover:shadow-[var(--shadow-card-hover)] sm:p-7"
+                >
+                  <h2 className="text-xl text-ink-950">{l.title}</h2>
+                  <p className="mt-2 flex-1 text-ink-600">{l.text}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700">
+                    {l.label} <LuArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
       <ServiceCards
-        tone="default"
+        tone={nextTone()}
+        area={area.slug}
         eyebrow={`Services in ${area.name}`}
         title={`Renovation services in ${area.name}`}
         intro={`Every service below is available in ${listJoin(area.cities.slice(0, 4))} and nearby communities.`}
       />
 
-      {project && <FeaturedProject project={project} eyebrow={`Recent project in ${area.name}`} tone="white" />}
+      {project && <FeaturedProject project={project} eyebrow={`Recent project in ${area.name}`} tone={nextTone()} />}
 
-      <Section tone={project ? 'default' : 'white'}>
+      <Section tone={nextTone()}>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <SectionHeading eyebrow="Local knowledge" title={area.permits.heading} spacing="tight" />
@@ -96,6 +125,20 @@ export default async function AreaPage({ params }: Props) {
           </div>
 
           <div className="space-y-8">
+            {guides.length > 0 && (
+              <div className="rounded-[var(--radius-card)] bg-gold-50 p-8 ring-1 ring-gold-200">
+                <h2 className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-gold-800">{area.name} guides</h2>
+                <ul className="mt-4 space-y-3">
+                  {guides.map((g) => (
+                    <li key={g.slug}>
+                      <Link href={postHref(g.slug)} className="font-semibold text-ink-900 underline-offset-4 hover:text-gold-700 hover:underline">
+                        {g.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {office && (
               <div className="rounded-[var(--radius-card)] bg-ink-950 p-8 text-ink-300">
                 <h2 className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-gold-300">Our {office.label} office</h2>
@@ -128,10 +171,10 @@ export default async function AreaPage({ params }: Props) {
         </div>
       </Section>
 
-      <ReviewsSection title={`Reviews from ${area.name} homeowners`} officeIds={office ? [office.id] : undefined} testimonials={area.testimonials} tone={project ? 'white' : 'default'} />
-      <FaqSection faqs={area.faqs} title={`Renovating in ${area.name}: FAQs`} tone={project ? 'default' : 'white'} />
+      <ReviewsSection title={`Reviews from ${area.name} homeowners`} officeIds={office ? [office.id] : undefined} testimonials={area.testimonials} tone={nextTone()} />
+      <FaqSection faqs={area.faqs} title={`Renovating in ${area.name}: FAQs`} tone={nextTone()} />
 
-      <Section tone={project ? 'white' : 'default'} spacing="compact">
+      <Section tone={nextTone()} spacing="compact">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold-700">Other service areas</p>
         <ul className="mt-4 flex flex-wrap gap-3">
           {otherAreas.map((a) => (
@@ -148,7 +191,7 @@ export default async function AreaPage({ params }: Props) {
         title={`Get a free estimate in ${area.name}`}
         defaultLocation={area.cities[0]}
         officeId={office?.id}
-        tone={project ? 'default' : 'white'}
+        tone={nextTone()}
       />
     </>
   );

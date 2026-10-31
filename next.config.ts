@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       { source: '/areas-we-serve/milton', destination: '/areas-we-serve/bradford', permanent: true },
       { source: '/bradford', destination: '/areas-we-serve/bradford', permanent: true },
       { source: '/portfolio', destination: '/projects', permanent: true },
+      // Cost guides are paused for now (temporary, so they can come back at the same URL).
+      { source: '/blog/bathroom-renovation-cost-kitchener-waterloo', destination: '/blog/bathroom-design-guide', permanent: false },
+      { source: '/blog/kitchen-renovation-cost-kitchener-waterloo', destination: '/blog/kitchen-design-guide', permanent: false },
     ];
   },
 

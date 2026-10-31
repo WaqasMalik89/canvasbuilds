@@ -3,8 +3,9 @@ import { LuArrowRight } from 'react-icons/lu';
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ServiceIcon from '@/components/ui/ServiceIcon';
+import { findLocalServiceHref } from '@/content/local-services';
 import { serviceHref, services as allServices } from '@/content/services';
-import type { Service } from '@/content/types';
+import type { AreaSlug, Service } from '@/content/types';
 
 interface Props {
   services?: Service[];
@@ -13,6 +14,8 @@ interface Props {
   intro?: string;
   /** Adds "in <area>" to each card's link text for local pages. */
   areaName?: string;
+  /** Link to this area's local service page where one exists. */
+  area?: AreaSlug;
   tone?: 'default' | 'white';
   id?: string;
 }
@@ -23,6 +26,7 @@ export default function ServiceCards({
   title = 'Renovation services',
   intro,
   areaName,
+  area,
   tone = 'white',
   id = 'services',
 }: Props) {
@@ -33,7 +37,7 @@ export default function ServiceCards({
         {services.map((s) => (
           <li key={s.slug}>
             <Link
-              href={serviceHref(s.slug)}
+              href={(area && findLocalServiceHref(area, s.slug)) || serviceHref(s.slug)}
               className="group flex h-full gap-4 rounded-[var(--radius-card)] border border-ink-200/80 bg-white p-5 shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:border-gold-300 hover:shadow-[var(--shadow-card-hover)] sm:flex-col sm:gap-0 sm:p-7"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-ink-950 sm:size-12 text-gold-400 transition-colors group-hover:bg-gold-500 group-hover:text-ink-950">

@@ -73,6 +73,8 @@ export interface Service {
   photos: Photo[];
   /** Featured project shown with a before/after slider (see content/projects.ts). */
   featuredProjectId?: string;
+  /** Heading of the guides box on the service page (default "Planning your project?"). */
+  guidesTitle?: string;
   related: ServiceSlug[];
 }
 
@@ -98,6 +100,10 @@ export interface ServiceArea {
   faqs: Faq[];
   /** Hand-picked customer reviews shown on the area page. */
   testimonials?: Testimonial[];
+  /** Extra links under this area in the header menu (e.g. a service page with KW work but no local page). */
+  menuLinks?: { label: string; href: string }[];
+  /** Hand-picked links shown near the top of the area page (local pages, guides). */
+  featuredLinks?: { title: string; text: string; href: string; label: string }[];
   featuredProjectId?: string;
 }
 
@@ -121,6 +127,8 @@ export interface FeaturedProject {
   service: ServiceSlug;
   summary: string[];
   highlights: string[];
+  /** Paint colours and finishes, shown as a short list under the highlights. */
+  specs?: { title?: string; items: { label: string; value: string }[] };
   before: Photo;
   after: Photo;
   /** Slider labels (default "Before" / "After"). */
@@ -131,8 +139,14 @@ export interface FeaturedProject {
   /** Crop every step photo the same way (default: per photo, using its portrait flag). */
   stepsAspect?: 'portrait' | 'landscape';
   steps?: ProjectStep[];
+  /** Taller 9:16 before/after slider, for full-room phone photos. */
+  sliderTall?: boolean;
+  /** Photo tour of the finished space, shown after the steps. */
+  tour?: { title?: string; intro?: string; photos: ProjectStep[] };
   /** Optional short site video (H.264 .mp4) shown under the steps. */
   video?: ProjectVideo;
+  /** Extra videos shown beside the main one (e.g. a full walkthrough). */
+  videos?: ProjectVideo[];
 }
 
 export interface ProjectVideo {
@@ -143,4 +157,6 @@ export interface ProjectVideo {
   caption: string;
   /** Vertical phone video (shown at 9:16). */
   portrait?: boolean;
+  /** YYYY-MM-DD the video was first published, for VideoObject structured data. */
+  uploadDate?: string;
 }
